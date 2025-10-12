@@ -13,21 +13,51 @@ import portadaImg from "../../../assets/LibroPersonajes/portada.png";
 import contraportadaImg from "../../../assets/LibroPersonajes/contraportada.png";
 
 // 🎥 Fondos, vídeos y marcos
-import fondo1 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
-import fondo2 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
-import fondo3 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
+import fondo1 from "../../../assets/LibroPersonajes/personajes/1.png";
+import fondo2 from "../../../assets/LibroPersonajes/personajes/2.png";
+import fondo3 from "../../../assets/LibroPersonajes/personajes/3.png";
+import fondo4 from "../../../assets/LibroPersonajes/personajes/4.png";
+import fondo5 from "../../../assets/LibroPersonajes/personajes/5.png";
+import fondo6 from "../../../assets/LibroPersonajes/personajes/6.png";
+import fondo7 from "../../../assets/LibroPersonajes/personajes/7.png";
+import fondo8 from "../../../assets/LibroPersonajes/personajes/8.png";
+import fondo9 from "../../../assets/LibroPersonajes/personajes/9.png";
+import fondo10 from "../../../assets/LibroPersonajes/personajes/10.png";
+import fondo11 from "../../../assets/LibroPersonajes/personajes/11.png";
+import fondo12 from "../../../assets/LibroPersonajes/personajes/12.png";
+import fondo13 from "../../../assets/LibroPersonajes/personajes/13.png";
+import fondo14 from "../../../assets/LibroPersonajes/personajes/14.png";
+import fondo15 from "../../../assets/LibroPersonajes/personajes/15.png";
+import fondo16 from "../../../assets/LibroPersonajes/personajes/16.png";
+import fondo17 from "../../../assets/LibroPersonajes/personajes/17.png";
+import fondo18 from "../../../assets/LibroPersonajes/personajes/18.png";
+import fondo19 from "../../../assets/LibroPersonajes/personajes/19.png";
+import fondo20 from "../../../assets/LibroPersonajes/personajes/20.png";
 
-import fondoVideo1 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
-import fondoVideo2 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
-import fondoVideo3 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
+import fondoVideo from "../../../assets/LibroPersonajes/fondo-video.png";
 
-import video1 from "../../../assets/LibroPersonajes/videos/video1.mp4";
-import video2 from "../../../assets/LibroPersonajes/videos/video1.mp4";
-import video3 from "../../../assets/LibroPersonajes/videos/video1.mp4";
+import video1 from "../../../assets/LibroPersonajes/videos/1.mp4";
+import video2 from "../../../assets/LibroPersonajes/videos/2.mp4";
+import video3 from "../../../assets/LibroPersonajes/videos/3.mp4";
+import video4 from "../../../assets/LibroPersonajes/videos/4.mp4";
+import video5 from "../../../assets/LibroPersonajes/videos/5.mp4";
+import video6 from "../../../assets/LibroPersonajes/videos/6.mp4";
+import video7 from "../../../assets/LibroPersonajes/videos/7.mp4";
+import video8 from "../../../assets/LibroPersonajes/videos/8.mp4";
+import video9 from "../../../assets/LibroPersonajes/videos/9.mp4";
+import video10 from "../../../assets/LibroPersonajes/videos/10.mp4";
+import video11 from "../../../assets/LibroPersonajes/videos/11.mp4";
+import video12 from "../../../assets/LibroPersonajes/videos/12.mp4";
+import video13 from "../../../assets/LibroPersonajes/videos/13.mp4";
+import video14 from "../../../assets/LibroPersonajes/videos/14.mp4";
+import video15 from "../../../assets/LibroPersonajes/videos/15.mp4";
+import video16 from "../../../assets/LibroPersonajes/videos/16.mp4";
+import video17 from "../../../assets/LibroPersonajes/videos/17.mp4";
+import video18 from "../../../assets/LibroPersonajes/videos/18.mp4";
+import video19 from "../../../assets/LibroPersonajes/videos/19.mp4";
+import video20 from "../../../assets/LibroPersonajes/videos/20.mp4";
 
-import marco1 from "../../../assets/LibroPersonajes/marco-transparente.png";
-import marco2 from "../../../assets/LibroPersonajes/marco-transparente.png";
-import marco3 from "../../../assets/LibroPersonajes/marco-transparente.png";
+import marco from "../../../assets/LibroPersonajes/marco-transparente.png";
 
 function LibroPersonajes() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
@@ -47,9 +77,26 @@ function LibroPersonajes() {
 
   // 📖 Lista de personajes (fondo + fondoVideo + video + marcoVideo)
   const personajes = [
-    { fondo: fondo1, fondoVideo: fondoVideo1, video: video1, marcoVideo: marco1 },
-    { fondo: fondo2, fondoVideo: fondoVideo2, video: video2, marcoVideo: marco2 },
-    { fondo: fondo3, fondoVideo: fondoVideo3, video: video3, marcoVideo: marco3 },
+    { fondo: fondo1, fondoVideo: fondoVideo, video: video1, marcoVideo: marco },
+    { fondo: fondo2, fondoVideo: fondoVideo, video: video2, marcoVideo: marco },
+    { fondo: fondo3, fondoVideo: fondoVideo, video: video3, marcoVideo: marco },
+    { fondo: fondo4, fondoVideo: fondoVideo, video: video4, marcoVideo: marco },
+    { fondo: fondo5, fondoVideo: fondoVideo, video: video5, marcoVideo: marco },
+    { fondo: fondo6, fondoVideo: fondoVideo, video: video6, marcoVideo: marco },
+    { fondo: fondo7, fondoVideo: fondoVideo, video: video7, marcoVideo: marco },
+    { fondo: fondo8, fondoVideo: fondoVideo, video: video8, marcoVideo: marco },
+    { fondo: fondo9, fondoVideo: fondoVideo, video: video9, marcoVideo: marco },
+    { fondo: fondo10, fondoVideo: fondoVideo, video: video10, marcoVideo: marco },
+    { fondo: fondo11, fondoVideo: fondoVideo, video: video11, marcoVideo: marco },
+    { fondo: fondo12, fondoVideo: fondoVideo, video: video12, marcoVideo: marco },
+    { fondo: fondo13, fondoVideo: fondoVideo, video: video13, marcoVideo: marco },
+    { fondo: fondo14, fondoVideo: fondoVideo, video: video14, marcoVideo: marco },
+    { fondo: fondo15, fondoVideo: fondoVideo, video: video15, marcoVideo: marco },
+    { fondo: fondo16, fondoVideo: fondoVideo, video: video16, marcoVideo: marco },
+    { fondo: fondo17, fondoVideo: fondoVideo, video: video17, marcoVideo: marco },
+    { fondo: fondo18, fondoVideo: fondoVideo, video: video18, marcoVideo: marco },
+    { fondo: fondo19, fondoVideo: fondoVideo, video: video19, marcoVideo: marco },
+    { fondo: fondo20, fondoVideo: fondoVideo, video: video20, marcoVideo: marco },
   ];
 
   // 📊 Total de páginas (portada + personajes*2 + contraportada)
