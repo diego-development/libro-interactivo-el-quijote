@@ -75,44 +75,82 @@ function LibroEjercicios() {
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
 
+
+  const [ultimaPaginaGrupo, setUltimaPaginaGrupo] = useState([]);
+
   // 📄 Agrupar preguntas (3 por página, máximo 2 hojas internas)
-useEffect(() => {
-  if (ejercicios.length === 0) return;
+  useEffect(() => {
+    if (ejercicios.length === 0) return;
 
-  const generarPaginas = () => {
-    const porPagina = 3; // 🔹 Máximo 3 preguntas por página
-    const nuevasPaginas = [];
+    const generarPaginas = () => {
+      const porPagina = 3;
+      const nuevasPaginas = [];
 
-    // 🔀 Mezclar las preguntas aleatoriamente en cada carga
-    const ejerciciosAleatorios = [...ejercicios].sort(() => Math.random() - 0.5);
+      // Mezclar aleatoriamente
+      const ejerciciosAleatorios = [...ejercicios].sort(() => Math.random() - 0.5);
 
-    // 📄 Dividir los ejercicios en grupos de 3
-    for (let i = 0; i < ejerciciosAleatorios.length; i += porPagina) {
-      nuevasPaginas.push(ejerciciosAleatorios.slice(i, i + porPagina));
-    }
+      // Filtrar por id único (por si el JSON trae repetidos)
+      const idsVistos = new Set();
+      const ejerciciosUnicos = ejerciciosAleatorios.filter(e => {
+        if (!e?.id) return false;
+        if (idsVistos.has(e.id)) return false;
+        idsVistos.add(e.id);
+        return true;
+      });
 
-    // 🔢 Limitar a máximo 4 páginas (2 hojas internas)
-    let paginasLimitadas = nuevasPaginas.slice(0, 4);
+      // Dividir en grupos de 3
+      for (let i = 0; i < ejerciciosUnicos.length; i += porPagina) {
+        nuevasPaginas.push(ejerciciosUnicos.slice(i, i + porPagina));
+      }
 
-    // 🧩 Solo añadir página vacía si el número total es impar Y la última ya tiene contenido
-    if (paginasLimitadas.length % 2 !== 0) {
-      const ultimaTieneContenido = paginasLimitadas.at(-1)?.length > 0;
-      if (ultimaTieneContenido) paginasLimitadas.push([]);
-    }
+      // Limitar a máx 4 páginas (2 hojas internas)
+      let paginasLimitadas = nuevasPaginas.slice(0, 4);
 
-    // ✅ Aseguramos que la última interna (antes de contraportada) tenga ejercicios
-    if (paginasLimitadas.length > 0 && paginasLimitadas.at(-1).length === 0) {
-      const penultima = paginasLimitadas[paginasLimitadas.length - 2];
-      paginasLimitadas[paginasLimitadas.length - 1] = penultima;
-    }
+      // Si número impar, agrega una página vacía real
+      if (paginasLimitadas.length % 2 !== 0) {
+        paginasLimitadas.push([]);
+      }
 
-    setPaginas(paginasLimitadas);
-  };
+      // ✅ Calcular el grupo para la ÚLTIMA PÁGINA EXTRA (distinto a la penúltima del map)
+      let extra = [];
+      if (paginasLimitadas.length > 0) {
+        const grupoUltimoDelMap = paginasLimitadas[paginasLimitadas.length - 1] || [];
+        const idsUltimoDelMap = new Set(grupoUltimoDelMap.map(q => q.id));
 
-  generarPaginas();
-  window.addEventListener('resize', generarPaginas);
-  return () => window.removeEventListener('resize', generarPaginas);
-}, [ejercicios]);
+        // 1) Intentar elegir 3 que NO estén en el último del map
+        const candidatos = ejerciciosUnicos.filter(e => !idsUltimoDelMap.has(e.id));
+        if (candidatos.length >= porPagina) {
+          extra = candidatos.slice(0, porPagina);
+        } else {
+          // 2) Si no alcanza, reemplazar al menos 1 elemento para que NO sea el mismo conjunto
+          const distinto = ejerciciosUnicos.find(e => !idsUltimoDelMap.has(e.id));
+          if (distinto && grupoUltimoDelMap.length) {
+            const base = [...grupoUltimoDelMap];
+            base[0] = distinto; // cambia al menos un ejercicio
+            // asegurar unicidad por id en la extra
+            const vistosExtra = new Set();
+            extra = base.filter(e => {
+              if (!e) return false;
+              if (vistosExtra.has(e.id)) return false;
+              vistosExtra.add(e.id);
+              return true;
+            }).slice(0, porPagina);
+          } else {
+            // 3) Si de verdad no hay nada distinto, deja la extra vacía
+            extra = [];
+          }
+        }
+      }
+
+      setPaginas(paginasLimitadas);
+      setUltimaPaginaGrupo(extra); // ← aquí fijamos el grupo de la última página
+    };
+
+    generarPaginas();
+  }, [ejercicios]);
+
+
+
 
 
 
@@ -126,30 +164,30 @@ useEffect(() => {
       try {
         s.current.pause();
         s.current.currentTime = 0;
-      } catch {}
+      } catch { }
     });
 
     if (index === 0 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => {});
-    } 
+      sonidoContraportada.current.play().catch(() => { });
+    }
     else if (index === 0 && direction === "forward") {
-      sonidoPortada.current.play().catch(() => {});
-    } 
+      sonidoPortada.current.play().catch(() => { });
+    }
     else if (index === 1) {
       if (direction === "forward") {
-        sonidoPortada.current.play().catch(() => {});
+        sonidoPortada.current.play().catch(() => { });
       } else {
-        sonidoPagina.current.play().catch(() => {});
+        sonidoPagina.current.play().catch(() => { });
       }
-    } 
+    }
     else if (index === paginas.length + 3 && direction === "forward") {
-      sonidoContraportada.current.play().catch(() => {});
-    } 
+      sonidoContraportada.current.play().catch(() => { });
+    }
     else if (index === paginas.length + 1 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => {});
-    } 
+      sonidoContraportada.current.play().catch(() => { });
+    }
     else {
-      sonidoPagina.current.play().catch(() => {});
+      sonidoPagina.current.play().catch(() => { });
     }
   };
 
@@ -163,79 +201,84 @@ useEffect(() => {
   }
 
   // 📖 Render principal
-// 📖 Render principal
-return (
-  <PageWrapper>
-    <div
-      className="relative h-screen w-screen flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${fondoLibro})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <HTMLFlipBook
-        ref={flipBookRef}
-        width={bookSize.width}
-        height={bookSize.height}
-        size="fixed"
-        maxShadowOpacity={0.5}
-        drawShadow
-        showCover
-        onFlip={handleFlip}
-        style={{ backgroundColor: 'transparent' }}
+  // 📖 Render principal
+  return (
+    <PageWrapper>
+      <div
+        className="relative h-screen w-screen flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${fondoLibro})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
-        {/* 🟦 Portada */}
-        <div className="page flex items-center justify-center">
-          <img
-            src={imagenesLibro.portada}
-            alt="Portada ejercicios"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <HTMLFlipBook
+          ref={flipBookRef}
+          width={bookSize.width}
+          height={bookSize.height}
+          size="fixed"
+          maxShadowOpacity={0.5}
+          drawShadow
+          showCover
+          onFlip={handleFlip}
+          style={{ backgroundColor: 'transparent' }}
+        >
+          {/* 🟦 Portada */}
+          <div className="page flex items-center justify-center">
+            <img
+              src={imagenesLibro.portada}
+              alt="Portada ejercicios"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-        {/* 🟨 Primera página */}
-        <div className="page flex items-center justify-center relative">
-          <img
-            src={imagenesLibro.primeraPagina}
-            alt="Primera página"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-        </div>
+          {/* 🟨 Primera página */}
+          <div className="page flex items-center justify-center relative">
+            <img
+              src={imagenesLibro.primeraPagina}
+              alt="Primera página"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </div>
+          {/* 📄 Páginas con ejercicios (máximo 2 hojas internas) */}
+          {paginas.map((grupo, index) => {
+            // 🧩 Generar clave única a partir de los id de las preguntas del grupo
+            const claveGrupo = grupo.map((q) => q.id).join('-') || `vacio-${index}`;
+            return (
+              <PaginaEjercicios
+                key={`pagina-${index}-${claveGrupo}`} // ✅ clave única y estable
+                grupo={grupo}
+                imagenFondo={
+                  index % 2 === 0
+                    ? imagenesLibro.hojaFrente
+                    : imagenesLibro.hojaReverso
+                }
+                bookSize={bookSize}
+              />
+            );
+          })}
 
-        {/* 📄 Páginas con ejercicios (máximo 2 hojas internas) */}
-        {paginas.map((grupo, index) => (
+          {/* 🟪 Última página con ejercicios (clave independiente) */}
+          {/* 🟪 Última página con ejercicios */}
           <PaginaEjercicios
-            key={index}
-            grupo={grupo}
-            imagenFondo={
-              index % 2 === 0
-                ? imagenesLibro.hojaFrente
-                : imagenesLibro.hojaReverso
-            }
+            grupo={ultimaPaginaGrupo}  // ← antes usaba paginas[paginas.length - 1]
+            imagenFondo={imagenesLibro.ultimaPagina}
             bookSize={bookSize}
           />
-        ))}
 
-        {/* 🟪 Última página con ejercicios */}
-        <PaginaEjercicios
-          grupo={paginas[paginas.length - 1] || []}
-          imagenFondo={imagenesLibro.ultimaPagina}
-          bookSize={bookSize}
-        />
 
-        {/* 🟥 Contraportada */}
-        <div className="page flex items-center justify-center">
-          <img
-            src={imagenesLibro.contraportada}
-            alt="Contraportada ejercicios"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </HTMLFlipBook>
-    </div>
-  </PageWrapper>
-);
+          {/* 🟥 Contraportada */}
+          <div className="page flex items-center justify-center">
+            <img
+              src={imagenesLibro.contraportada}
+              alt="Contraportada ejercicios"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </HTMLFlipBook>
+      </div>
+    </PageWrapper>
+  );
 }
 
 export default LibroEjercicios;

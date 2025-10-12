@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import "./PaginaReseñas.css";
+import papiroImg from "../../../assets/papiro.png"; // 🆕 Fondo de cada reseña
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -46,7 +47,7 @@ const PaginaReseñas = forwardRef(({ grupo = [], imagenFondo, bookSize }, ref) =
           grupoLimitado.map((r, i) => (
             <motion.div
               key={r.id || i}
-              className="resena-card bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg"
+              className="resena-card"
               variants={fadeInVariant}
               initial="hidden"
               animate="visible"
@@ -55,6 +56,10 @@ const PaginaReseñas = forwardRef(({ grupo = [], imagenFondo, bookSize }, ref) =
                 padding: `${1.6 * scale}rem ${2 * scale}rem`,
                 borderRadius: `${18 * scale}px`,
                 maxWidth: "90%",
+                backgroundImage: `url(${papiroImg})`, // 🆕 Fondo tipo papiro
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
               }}
             >
               <div
