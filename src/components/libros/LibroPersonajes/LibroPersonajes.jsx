@@ -17,9 +17,9 @@ import fondo1 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
 import fondo2 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
 import fondo3 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
 
-import fondoVideo1 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
-import fondoVideo2 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
-import fondoVideo3 from "../../../assets/LibroPersonajes/fondos/fondo1.png";
+import fondoVideo1 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
+import fondoVideo2 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
+import fondoVideo3 from "../../../assets/LibroPersonajes/fondos/fondo2.png";
 
 import video1 from "../../../assets/LibroPersonajes/videos/video1.mp4";
 import video2 from "../../../assets/LibroPersonajes/videos/video1.mp4";
@@ -71,8 +71,7 @@ function LibroPersonajes() {
     window.addEventListener("resize", updateBookSize);
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
-
-  // 🎧 Sonidos al pasar página
+  // 🎧 Manejo de sonidos
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
@@ -87,9 +86,19 @@ function LibroPersonajes() {
 
     if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => {});
-    } else if (index === 0 && direction === "forward") {
+    } 
+    else if (index === 0 && direction === "forward") {
       sonidoPortada.current.play().catch(() => {});
-    } else {
+    } 
+    else if (index === 1) {
+      if (direction === "forward") {
+        sonidoPortada.current.play().catch(() => {});
+      } else {
+        sonidoPagina.current.play().catch(() => {});
+      }
+    } 
+     
+    else {
       sonidoPagina.current.play().catch(() => {});
     }
   };
