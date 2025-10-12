@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import HTMLFlipBook from "react-pageflip";
-import '../LibroReseñas/LibroReseñas.css';
 import PageWrapper from '../../PageWrapper';
 import fondoLibro from '../../../assets/fondo-libro.png';
 import PaginaEjercicios from './PaginaEjercicios';
@@ -11,10 +10,10 @@ import sonidoContraportadaSrc from '../../../assets/sonidos/portada.m4a';
 
 import portadaImg from '../../../assets/LibroEjercicios/portada.png';
 import contraportadaImg from '../../../assets/LibroEjercicios/portada.png';
-import primeraPaginaImg from '../../../assets/LibroEjercicios/pagina1.png';
-import ultimaPaginaImg from '../../../assets/LibroEjercicios/pagina4.png';
-import hojaFrenteImg from '../../../assets/LibroEjercicios/pagina4.png';
-import hojaReversoImg from '../../../assets/LibroEjercicios/pagina3.png';
+import primeraPaginaImg from '../../../assets/LibroEjercicios/primeraPagina.png';
+import ultimaPaginaImg from '../../../assets/LibroEjercicios/ultimaPagina.png';
+import hojaFrenteImg from '../../../assets/LibroEjercicios/hojaFrente.png';
+import hojaReversoImg from '../../../assets/LibroEjercicios/hojaReverso.png';
 
 function LibroEjercicios() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });

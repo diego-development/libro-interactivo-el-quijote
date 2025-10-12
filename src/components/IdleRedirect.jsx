@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function IdleRedirect({ children }) {
+export default function IdleRedirect({ children, timeout = 60*5 }) {
   const navigate = useNavigate();
-  const [secondsLeft, setSecondsLeft] = useState(60);
+  const [secondsLeft, setSecondsLeft] = useState(timeout);
 
   // Ref para almacenar el tiempo restante
-  const remainingTimeRef = useRef(60);
+  const remainingTimeRef = useRef(timeout);
 
   // Ref para almacenar la última actividad
   const lastActivityRef = useRef(Date.now());
 
   const resetActivity = () => {
     lastActivityRef.current = Date.now();
-    remainingTimeRef.current = 60; // reinicia contador
-    setSecondsLeft(60); // actualiza UI
+    remainingTimeRef.current = timeout; // reinicia contador
+    setSecondsLeft(timeout); // actualiza UI
   };
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function IdleRedirect({ children }) {
     const interval = setInterval(() => {
       const now = Date.now();
       const diff = Math.floor((now - lastActivityRef.current) / 1000);
-      const remaining = 60 - diff;
+      const remaining = timeout - diff;
       remainingTimeRef.current = remaining > 0 ? remaining : 0;
       setSecondsLeft(remainingTimeRef.current);
 
@@ -39,12 +39,16 @@ export default function IdleRedirect({ children }) {
       clearInterval(interval);
       events.forEach((e) => window.removeEventListener(e, resetActivity));
     };
-  }, [navigate]);
+  }, [navigate, timeout]);
 
   return (
     <div>
       {children}
-      <div
+      
+    </div>
+  );
+}
+{/* <div
         style={{
           position: "fixed",
           bottom: "10px",
@@ -56,8 +60,5 @@ export default function IdleRedirect({ children }) {
           fontSize: "14px",
         }}
       >
-        Inactividad: {secondsLeft}s
-      </div>
-    </div>
-  );
-}
+        //Inactividad: {secondsLeft}s
+      </div> */}

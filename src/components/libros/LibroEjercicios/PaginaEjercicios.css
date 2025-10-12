@@ -29,9 +29,7 @@
   color: #2a1d0a;
 }
 
-.opcion:hover {
-  background: rgba(210, 230, 255, 0.8);
-}
+
 
 .opcion.seleccionada {
   background: rgba(76, 145, 255, 0.85);
@@ -98,10 +96,7 @@
     transition: all 0.25s ease;
   }
 
-  .opcion:hover {
-    background: rgba(210, 230, 255, 0.9);
-    transform: scale(1.02);
-  }
+ 
 
   .feedback {
     font-size: 1.8rem;

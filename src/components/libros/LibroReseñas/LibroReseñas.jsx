@@ -1,11 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
-import './LibroReseñas.css';
-import PageWrapper from '../../PageWrapper';
-import fondoLibro from '../../../assets/fondo-libro.png';
-import PaginaReseñas from './PaginaReseñas';
+import PageWrapper from "../../PageWrapper";
+import fondoLibro from "../../../assets/fondo-libro.png";
+import PaginaReseñas from "./PaginaReseñas";
 
-function LibroReseñas() {
+// 🖼️ Imágenes
+import portadaImg from "../../../assets/LibroEjercicios/portada.png";
+import contraportadaImg from "../../../assets/LibroReseñas/contraportada.png";
+import primeraPaginaImg from "../../../assets/LibroReseñas/primeraPagina.png";
+import ultimaPaginaImg from "../../../assets/LibroReseñas/ultimaPagina.png";
+import hojaFrenteImg from "../../../assets/LibroReseñas/hojaFrente.png";
+import hojaReversoImg from "../../../assets/LibroReseñas/hojaReverso.png";
+
+function LibroReseñas({ maxHojas = 2 }) {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [reseñas, setReseñas] = useState([]);
   const [paginas, setPaginas] = useState([]);
@@ -23,22 +30,15 @@ function LibroReseñas() {
     sonidoContraportada.current.volume = 1.0;
   }, []);
 
-  // 📚 Imágenes del libro
-  const imagenesLibro = {
-    portada: "/libros/frases/portada.png",
-    contraportada: "/libros/frases/contraportada.png",
-    primeraPagina: "/libros/frases/pagina3.png",
-    ultimaPagina: "/libros/frases/pagina4.png",
-    hojaFrente: "/libros/frases/pagina4.png",
-    hojaReverso: "/libros/frases/pagina3.png",
-  };
-
-  // 📥 Cargar reseñas
+  // 📥 Cargar reseñas aleatorias
   useEffect(() => {
-    fetch('/reseñas.json')
-      .then(res => res.json())
-      .then(data => setReseñas(data))
-      .catch(err => console.error('Error cargando reseñas:', err));
+    fetch("/reseñas.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const shuffled = [...data].sort(() => Math.random() - 0.5);
+        setReseñas(shuffled);
+      })
+      .catch((err) => console.error("Error cargando reseñas:", err));
   }, []);
 
   // 📏 Ajustar tamaño del libro según pantalla
@@ -49,7 +49,6 @@ function LibroReseñas() {
       const aspectRatio = 800 / 1200;
       let width = availableWidth;
       let height = width / aspectRatio;
-
       if (height > availableHeight) {
         height = availableHeight;
         width = height * aspectRatio;
@@ -62,31 +61,42 @@ function LibroReseñas() {
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
 
-  // 📄 Agrupar reseñas (3 o 4 por página según ancho)
+  // 📄 Distribuir reseñas en hojas internas + página adicional
   useEffect(() => {
     if (reseñas.length === 0) return;
 
-    const ancho = window.innerWidth;
-    const porPagina = ancho < 900 ? 3 : 4;
-    const nuevasPaginas = [];
+    const altura = bookSize.height;
+    const porPagina = altura < 900 ? 3 : altura < 1100 ? 4 : 5;
 
-    for (let i = 0; i < reseñas.length; i += porPagina) {
-      nuevasPaginas.push(reseñas.slice(i, i + porPagina));
+    // Si hay pocas reseñas, no generar hojas internas, pero sí página adicional
+    if (reseñas.length <= porPagina) {
+      setPaginas([]);
+      return;
     }
 
-    // Asegurar número par de páginas
-    if (nuevasPaginas.length % 2 !== 0) nuevasPaginas.push([]);
+    // Dividir reseñas en grupos para hojas internas
+    const grupos = [];
+    for (let i = 0; i < reseñas.length; i += porPagina) {
+      grupos.push(reseñas.slice(i, i + porPagina));
+    }
 
-    setPaginas(nuevasPaginas);
-  }, [reseñas]);
+    // Limitar según hojas máximas (cada hoja = 2 páginas)
+    let paginasLimitadas = grupos.slice(0, maxHojas * 2);
 
-  // 🎧 Manejo de sonidos con dirección
+    // Si el número es impar, agregamos una página vacía (mantener paridad)
+    if (paginasLimitadas.length % 2 !== 0) {
+      paginasLimitadas.push([]);
+    }
+
+    setPaginas(paginasLimitadas);
+  }, [reseñas, bookSize, maxHojas]);
+
+  // 🎧 Manejo de sonidos
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
     setLastPage(index);
 
-    // detener cualquier sonido anterior
     [sonidoPagina, sonidoPortada, sonidoContraportada].forEach((s) => {
       try {
         s.current.pause();
@@ -118,7 +128,6 @@ function LibroReseñas() {
     }
   };
 
-  // ⏳ Pantalla de carga
   if (reseñas.length === 0) {
     return (
       <div className="flex items-center justify-center h-screen w-screen bg-gray-900 text-white text-2xl">
@@ -127,15 +136,37 @@ function LibroReseñas() {
     );
   }
 
-  // 📖 Render principal
+  // ✅ Preparar páginas de reseñas
+  const paginasInternas =
+    paginas.length > 0
+      ? paginas.map((grupo, i) => (
+          <PaginaReseñas
+            key={i}
+            grupo={grupo}
+            imagenFondo={i % 2 === 0 ? hojaFrenteImg : hojaReversoImg}
+            bookSize={bookSize}
+          />
+        ))
+      : [];
+
+  // ✅ Página adicional con reseñas (siempre se muestra)
+  const paginaAdicional = (
+    <PaginaReseñas
+      key="extra"
+      grupo={reseñas.slice(0, 5)} // muestra hasta 5 comentarios
+      imagenFondo={ultimaPaginaImg}
+      bookSize={bookSize}
+    />
+  );
+
   return (
     <PageWrapper>
       <div
         className="relative h-screen w-screen flex items-center justify-center"
         style={{
           backgroundImage: `url(${fondoLibro})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <HTMLFlipBook
@@ -143,60 +174,40 @@ function LibroReseñas() {
           width={bookSize.width}
           height={bookSize.height}
           size="fixed"
-          maxShadowOpacity={0.5}
-          drawShadow
           showCover
+          drawShadow
+          maxShadowOpacity={0.5}
           onFlip={handleFlip}
-          style={{ backgroundColor: 'transparent' }}
+          style={{ backgroundColor: "transparent" }}
         >
           {/* 🟦 Portada */}
-          <div className="page flex items-center justify-center">
+          <div className="page">
             <img
-              src={imagenesLibro.portada}
+              src={portadaImg}
               alt="Portada"
               className="w-full h-full object-cover"
             />
           </div>
 
-          {/* 🟨 Primera página */}
-          <div className="page flex items-center justify-center relative">
+          {/* 🟨 Primera página (sin reseñas) */}
+          <div className="page relative">
             <img
-              src={imagenesLibro.primeraPagina}
+              src={primeraPaginaImg}
               alt="Primera página"
-              className="absolute inset-0 w-full h-full object-cover z-0"
-            />
-            <div className="relative z-10 text-center text-[#333] font-[Caveat] text-3xl opacity-80 px-4">
-              <p>“Aquí comienzan las historias...”</p>
-            </div>
-          </div>
-
-          {/* 📄 Páginas con reseñas */}
-          {paginas.map((grupo, index) => (
-            <PaginaReseñas
-              key={index}
-              grupo={grupo}
-              imagenFondo={
-                index % 2 === 0
-                  ? imagenesLibro.hojaFrente
-                  : imagenesLibro.hojaReverso
-              }
-              bookSize={bookSize}
-            />
-          ))}
-
-          {/* 🟪 Última página */}
-          <div className="page flex items-center justify-center">
-            <img
-              src={imagenesLibro.ultimaPagina}
-              alt="Última página"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
+
+          {/* 📖 Hojas internas (si hay reseñas suficientes) */}
+          {paginasInternas}
+
+          {/* 🟪 Página adicional (siempre con comentarios) */}
+          {paginaAdicional}
 
           {/* 🟥 Contraportada */}
-          <div className="page flex items-center justify-center">
+          <div className="page">
             <img
-              src={imagenesLibro.contraportada}
+              src={contraportadaImg}
               alt="Contraportada"
               className="w-full h-full object-cover"
             />

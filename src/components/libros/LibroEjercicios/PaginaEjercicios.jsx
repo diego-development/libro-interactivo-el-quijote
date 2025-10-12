@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './PaginaEjercicios.css';
-import hojaFondo from '../../../assets/LibroEjercicios/pagina3.png';
+import hojaFondo from '../../../assets/LibroEjercicios/hojaReverso.png';
 
 const PaginaEjercicios = forwardRef(({ grupo = [], imagenFondo = hojaFondo, bookSize, currentPage }, ref) => {
   const [respuestas, setRespuestas] = useState({});

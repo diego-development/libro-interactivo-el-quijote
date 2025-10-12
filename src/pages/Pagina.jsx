@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Frases from "../components/libros/LibroReseñas/LibroReseñas";
+import Frases from "../components/libros/LibroFrases/LibroFrases";
 import Personajes from "../components/libros/LibroPersonajes/LibroPersonajes";
 import Ejercicios from "../components/libros/LibroEjercicios/LibroEjercicios";
 import Reseñas from "../components/libros/LibroReseñas/LibroReseñas";

@@ -64,13 +64,12 @@ function LibroPersonajes() {
   }, []);
 
   // 📖 Lógica de sonidos igual a LibroEjercicios
+ // 🎧 Sonidos
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
     setLastPage(index);
-    setCurrentPage(index);
 
-    // detener sonidos previos
     [sonidoPagina, sonidoPortada, sonidoContraportada].forEach((s) => {
       try {
         s.current.pause();
@@ -78,14 +77,17 @@ function LibroPersonajes() {
       } catch {}
     });
 
-    const totalPages = personajes.length * 2 + 2;
-    const lastIndex = totalPages - 1;
-
-    if (index === 0 && direction === "forward") {
-      sonidoPortada.current.play().catch(() => {});
-    } else if (index === lastIndex && direction === "forward") {
+    if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => {});
-    } else if (index === 0 && direction === "backward") {
+    } else if (index === 0 && direction === "forward") {
+      sonidoPortada.current.play().catch(() => {});
+    } else if (index === 1) {
+      if (direction === "forward") {
+        sonidoPortada.current.play().catch(() => {});
+      } else {
+        sonidoPagina.current.play().catch(() => {});
+      }
+    } else if (index === lastPage +3 && direction === "forward") {
       sonidoContraportada.current.play().catch(() => {});
     } else {
       sonidoPagina.current.play().catch(() => {});
