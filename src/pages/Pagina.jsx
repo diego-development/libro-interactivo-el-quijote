@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 //import Book from '../components/Book';
-import Book from '../components/libros/LibroReseñas';
+import Book from '../components/libros/LibroPersonajes/LibroPersonajes';
 export default function Pagina({ num }) {
   const navigate = useNavigate();
   return (

@@ -1,0 +1,177 @@
+/* ------- Página (contenedor) ------- */
+.page {
+  perspective: 1200px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(1200px 800px at 30% 20%, rgba(255,255,255,0.08), transparent 60%),
+              radial-gradient(900px 600px at 70% 80%, rgba(0,0,0,0.05), transparent 55%);
+  mix-blend-mode: soft-light;
+  z-index: 1;
+}
+
+/* ------- Tarjeta de reseña ------- */
+.resena-card {
+  background: rgba(252, 226, 177, 0.65); /* beige cálido translúcido */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 6px 18px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+  transform: translateZ(0);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 90%;
+}
+
+.resena-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.resena-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg,
+              rgba(255,255,255,0.18) 0%,
+              rgba(255,255,255,0.06) 28%,
+              rgba(255,255,255,0) 55%,
+              rgba(0,0,0,0.03) 100%);
+  mix-blend-mode: screen;
+}
+
+.resena-card:hover {
+  background: rgba(252, 226, 177, 0.8);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.12),
+    0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+.resena-card:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 3px;
+}
+
+/* Tipografía */
+.resena-card h3,
+.resena-card .titulo {
+  margin: 0 0 0.25rem 0;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.resena-card p {
+  margin: 0.35rem 0 0 0;
+  font-family: 'Caveat', cursive;
+  color: #2a1d0a;
+  line-height: 1.4;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* ------- RESPONSIVE ------- */
+
+/* 📱 Pantallas pequeñas (móviles en vertical) */
+@media (max-width: 640px) {
+  .resena-card {
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    max-width: 95%;
+  }
+
+  .resena-card p {
+    font-size: 1.2rem; /* más compacto */
+    line-height: 1.3;
+  }
+
+  .resena-card h3,
+  .resena-card .titulo {
+    font-size: 1.4rem;
+  }
+}
+
+/* 📱 Pantallas medianas (tablets y móviles horizontales) */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .resena-card {
+    padding: 1rem 1.2rem;
+    border-radius: 15px;
+    max-width: 92%;
+  }
+
+  .resena-card p {
+    font-size: 1.6rem;
+  }
+
+  .resena-card h3,
+  .resena-card .titulo {
+    font-size: 1.8rem;
+  }
+}
+
+/* 💻 Pantallas grandes (desktop) */
+@media (min-width: 1024px) {
+  .resena-card {
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
+    max-width: 90%;
+  }
+
+  .resena-card p {
+    font-size: 2rem;
+  }
+
+  .resena-card h3,
+  .resena-card .titulo {
+    font-size: 2.4rem;
+  }
+}
+
+/* 🕶️ Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .resena-card,
+  .resena-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* 🌙 Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .resena-card {
+    background: rgba(90, 75, 55, 0.55);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .resena-card::before {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1),
+                inset 0 -1px 0 rgba(0,0,0,0.3);
+  }
+
+  .resena-card p {
+    color: #f8e7c2;
+  }
+}

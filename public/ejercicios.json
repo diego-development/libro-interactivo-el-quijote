@@ -1,0 +1,1892 @@
+[
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_001",
+    "question": "¿En qué provincia española nació Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Toledo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Albacete.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ciudad Real.",
+        "isCorrect": true
+      },
+      {
+        "text": "Sevilla.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Ciudad Real.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_002",
+    "question": "¿Cuál es la ciudad natal de Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Almodóvar del Campo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Madrid.",
+        "isCorrect": false
+      },
+      {
+        "text": "Toledo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Barcelona.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Almodóvar del Campo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_003",
+    "question": "¿A qué temprana edad mostró Alfredo Palmero su inclinación por la pintura?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A los 20 años.",
+        "isCorrect": false
+      },
+      {
+        "text": "A los 15 años.",
+        "isCorrect": false
+      },
+      {
+        "text": "A los 10 años.",
+        "isCorrect": true
+      },
+      {
+        "text": "En la vejez.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'A los 10 años.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_004",
+    "question": "¿Cuál fue uno de los principales premios que recibió Palmero en su juventud?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El Premio Goya.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Premio Nobel de Arte.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Premio Nacional de Dibujo.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Premio Velázquez.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El Premio Nacional de Dibujo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_005",
+    "question": "¿En qué país estudió y perfeccionó su técnica artística?",
+    "type": "multiple",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Francia, concretamente en París.",
+        "isCorrect": true
+      },
+      {
+        "text": "Italia",
+        "isCorrect": true
+      },
+      {
+        "text": "España.",
+        "isCorrect": false
+      },
+      {
+        "text": "Estados Unidos, en Nueva York.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "Respuestas correctas: Francia, concretamente en París., Italia."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 2: Estilo y Temática",
+    "id": "trivial_sobre_alfredo_palmero_006",
+    "question": "¿En qué estilo pictórico se enmarca principalmente la obra de Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Cubismo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Impresionismo",
+        "isCorrect": true
+      },
+      {
+        "text": "Surrealismo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Hiperrealismo.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Impresionismo'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 2: Estilo y Temática",
+    "id": "trivial_sobre_alfredo_palmero_007",
+    "question": "¿Cuál de los siguientes no es un tema recurrente en la obra de Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Escenas costumbristas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Figuras femeninas de carácter.",
+        "isCorrect": false
+      },
+      {
+        "text": "Las escenas marítimas",
+        "isCorrect": true
+      },
+      {
+        "text": "El flamenco y la danza.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Las escenas marítimas'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 2: Estilo y Temática",
+    "id": "trivial_sobre_alfredo_palmero_008",
+    "question": "¿Qué elemento pictórico utiliza Palmero para dar vida a sus cuadros?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "La ausencia de color.",
+        "isCorrect": false
+      },
+      {
+        "text": "El uso exclusivo del blanco y negro.",
+        "isCorrect": false
+      },
+      {
+        "text": "La luz y el color",
+        "isCorrect": true
+      },
+      {
+        "text": "El uso de tonos grises.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'La luz y el color'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 4: El Museo de Almodóvar del Campo",
+    "id": "trivial_sobre_alfredo_palmero_009",
+    "question": "Además de cuadros, ¿qué otros elementos se pueden encontrar en el Museo Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Libros sobre cocina.",
+        "isCorrect": false
+      },
+      {
+        "text": "Esculturas y objetos personales del artista.",
+        "isCorrect": true
+      },
+      {
+        "text": "Coches antiguos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Maquetas de barcos.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Esculturas y objetos personales del artista.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 5: El Museo de Barcelona y el legado",
+    "id": "trivial_sobre_alfredo_palmero_010",
+    "question": "¿Qué museo de La Saga Palmero se encuentra en Barcelona?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Museo de Cataluña.",
+        "isCorrect": false
+      },
+      {
+        "text": "Museo Dalí.",
+        "isCorrect": false
+      },
+      {
+        "text": "Museo Palmero",
+        "isCorrect": true
+      },
+      {
+        "text": "Museo del Prado.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Museo Palmero'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 5: El Museo de Barcelona y el legado",
+    "id": "trivial_sobre_alfredo_palmero_011",
+    "question": "¿Quién continuó el legado artístico de Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Sus sobrinos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Su hijo Miguel y su nieto Alfredo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Nadie, no tiene herederos artísticos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Su hermano.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Su hijo Miguel y su nieto Alfredo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 6: Técnica y reconocimiento",
+    "id": "trivial_sobre_alfredo_palmero_012",
+    "question": "¿Qué técnica de pintura utilizaba habitualmente Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Acuarela.",
+        "isCorrect": false
+      },
+      {
+        "text": "Óleo sobre lienzo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Pintura al fresco.",
+        "isCorrect": false
+      },
+      {
+        "text": "Acrílico.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Óleo sobre lienzo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 6: Técnica y reconocimiento",
+    "id": "trivial_sobre_alfredo_palmero_013",
+    "question": "¿Qué museo de arte español tiene una obra de Palmero en su colección?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El Museo del Prado.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Museo Reina Sofía.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Museo del Quijote de Ciudad Real",
+        "isCorrect": true
+      },
+      {
+        "text": "El Museo Guggenheim.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El Museo del Quijote de Ciudad Real'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 8: Museos y Obras",
+    "id": "trivial_sobre_alfredo_palmero_014",
+    "question": "¿Qué objeto personal del pintor se exhibe en el museo de Almodóvar?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Sus gafas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Su paleta de pintura.",
+        "isCorrect": true
+      },
+      {
+        "text": "Su cámara de fotos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Su reloj.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Su paleta de pintura.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 9: La obra de su hijo y nieto",
+    "id": "trivial_sobre_alfredo_palmero_015",
+    "question": "¿Qué rasgo estilístico une el trabajo de las tres generaciones de Palmero?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El uso del gris.",
+        "isCorrect": false
+      },
+      {
+        "text": "El uso de la luz y el color.",
+        "isCorrect": true
+      },
+      {
+        "text": "El dibujo a lápiz.",
+        "isCorrect": false
+      },
+      {
+        "text": "El uso de la acuarela.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El uso de la luz y el color.'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 1: Identidad y orígenes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_001",
+    "question": "¿Cuál es el verdadero nombre del hidalgo que se convierte en Don Quijote?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Lope de Vega",
+        "isCorrect": false
+      },
+      {
+        "text": "Sancho Panza",
+        "isCorrect": false
+      },
+      {
+        "text": "Alonso Quijano",
+        "isCorrect": true
+      },
+      {
+        "text": "Rodrigo de Quijana",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Alonso Quijano'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 1: Identidad y orígenes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_002",
+    "question": "¿De qué lugar era originario el protagonista de la obra?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "La Mancha, España",
+        "isCorrect": false
+      },
+      {
+        "text": "Andalucía, España",
+        "isCorrect": false
+      },
+      {
+        "text": "Un lugar de la Mancha",
+        "isCorrect": true
+      },
+      {
+        "text": "Castilla, España",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Un lugar de la Mancha'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 1: Identidad y orígenes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_003",
+    "question": "¿Cuál es el nombre del caballo de Don Quijote?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Babieca",
+        "isCorrect": false
+      },
+      {
+        "text": "Rocinante",
+        "isCorrect": true
+      },
+      {
+        "text": "Pegaso",
+        "isCorrect": false
+      },
+      {
+        "text": "Bucéfalo",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Rocinante'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 1: Identidad y orígenes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_004",
+    "question": "¿Quién es la dama de los pensamientos de Don Quijote, a quien él llama Dulcinea del Toboso?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Aldonza Lorenzo",
+        "isCorrect": true
+      },
+      {
+        "text": "Maritornes",
+        "isCorrect": false
+      },
+      {
+        "text": "Dorotea",
+        "isCorrect": false
+      },
+      {
+        "text": "Teresa Panza",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Aldonza Lorenzo'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 1: Identidad y orígenes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_005",
+    "question": "¿Cuál es el nombre de la sobrina de Don Quijote?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Dulcinea",
+        "isCorrect": false
+      },
+      {
+        "text": "Antonia",
+        "isCorrect": true
+      },
+      {
+        "text": "Teresa",
+        "isCorrect": false
+      },
+      {
+        "text": "Dorotea",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Antonia'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 2: Sancho Panza y su rol",
+    "id": "trivial_sobre_don_quijote_y_cervantes_006",
+    "question": "¿Qué montaba Sancho Panza?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Un caballo llamado Babieca",
+        "isCorrect": false
+      },
+      {
+        "text": "Un burro o jumento",
+        "isCorrect": true
+      },
+      {
+        "text": "Un perro",
+        "isCorrect": false
+      },
+      {
+        "text": "Un dromedario",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Un burro o jumento'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 2: Sancho Panza y su rol",
+    "id": "trivial_sobre_don_quijote_y_cervantes_007",
+    "question": "¿Cuál era el principal sueño de Sancho Panza como escudero?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Ser gobernador de una ínsula",
+        "isCorrect": true
+      },
+      {
+        "text": "Convertirse en caballero andante",
+        "isCorrect": false
+      },
+      {
+        "text": "Recibir un tesoro de oro",
+        "isCorrect": false
+      },
+      {
+        "text": "Ser rey",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Ser gobernador de una ínsula'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 2: Sancho Panza y su rol",
+    "id": "trivial_sobre_don_quijote_y_cervantes_008",
+    "question": "¿Qué oficio tenía Sancho Panza antes de ser escudero?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Sastre",
+        "isCorrect": false
+      },
+      {
+        "text": "Herrero",
+        "isCorrect": false
+      },
+      {
+        "text": "Labrador",
+        "isCorrect": true
+      },
+      {
+        "text": "Caballero",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Labrador'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 2: Sancho Panza y su rol",
+    "id": "trivial_sobre_don_quijote_y_cervantes_009",
+    "question": "¿Cuál es el nombre de la esposa de Sancho Panza?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Aldonza",
+        "isCorrect": false
+      },
+      {
+        "text": "Teresa Cascajo",
+        "isCorrect": true
+      },
+      {
+        "text": "Dulcinea",
+        "isCorrect": false
+      },
+      {
+        "text": "Maritornes",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Teresa Cascajo'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 2: Sancho Panza y su rol",
+    "id": "trivial_sobre_don_quijote_y_cervantes_010",
+    "question": "¿De qué objeto es portador Sancho en la primera parte de la obra?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "La armadura de Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "La bacía de barbero (yelmo de Mambrino)",
+        "isCorrect": true
+      },
+      {
+        "text": "Un escudo",
+        "isCorrect": false
+      },
+      {
+        "text": "La espada de Amadís de Gaula",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'La bacía de barbero (yelmo de Mambrino)'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 3: Aventuras y episodios famosos",
+    "id": "trivial_sobre_don_quijote_y_cervantes_011",
+    "question": "¿Qué confunde Don Quijote con gigantes?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Un rebaño de ovejas",
+        "isCorrect": false
+      },
+      {
+        "text": "Molinos de trigo",
+        "isCorrect": false
+      },
+      {
+        "text": "Molinos de viento",
+        "isCorrect": true
+      },
+      {
+        "text": "Gigantes mitológicos",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Molinos de viento'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 3: Aventuras y episodios famosos",
+    "id": "trivial_sobre_don_quijote_y_cervantes_012",
+    "question": "¿Qué arma usa Don Quijote contra los molinos de viento?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Una espada mágica",
+        "isCorrect": false
+      },
+      {
+        "text": "Su lanza",
+        "isCorrect": true
+      },
+      {
+        "text": "Una flecha",
+        "isCorrect": false
+      },
+      {
+        "text": "Una espada",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Su lanza'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 3: Aventuras y episodios famosos",
+    "id": "trivial_sobre_don_quijote_y_cervantes_013",
+    "question": "¿Qué atacan Don Quijote y Sancho en el episodio de las ovejas?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Un rebaño de vacas",
+        "isCorrect": false
+      },
+      {
+        "text": "Un grupo de soldados",
+        "isCorrect": false
+      },
+      {
+        "text": "Gigantes",
+        "isCorrect": false
+      },
+      {
+        "text": "Un rebaño de ovejas",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Un rebaño de ovejas'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 3: Aventuras y episodios famosos",
+    "id": "trivial_sobre_don_quijote_y_cervantes_014",
+    "question": "En la aventura del bálsamo de Fierabrás, ¿qué efecto produce en Don Quijote?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Lo cura de todo",
+        "isCorrect": false
+      },
+      {
+        "text": "Le provoca vómitos y malestar",
+        "isCorrect": true
+      },
+      {
+        "text": "Le da superpoderes",
+        "isCorrect": false
+      },
+      {
+        "text": "Lo deja inconsciente",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Le provoca vómitos y malestar'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 3: Aventuras y episodios famosos",
+    "id": "trivial_sobre_don_quijote_y_cervantes_015",
+    "question": "¿Quién derrota a Don Quijote al final de la Segunda Parte?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El Caballero de la Triste Figura",
+        "isCorrect": false
+      },
+      {
+        "text": "El Caballero del Bosque",
+        "isCorrect": false
+      },
+      {
+        "text": "Sancho",
+        "isCorrect": false
+      },
+      {
+        "text": "El Caballero de la Blanca Luna",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El Caballero de la Blanca Luna'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 4: Otros personajes relevantes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_016",
+    "question": "¿Quién es el cura del pueblo de Don Quijote?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Sansón Carrasco",
+        "isCorrect": false
+      },
+      {
+        "text": "Pero Pérez",
+        "isCorrect": true
+      },
+      {
+        "text": "El ventero",
+        "isCorrect": false
+      },
+      {
+        "text": "El barbero",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Pero Pérez'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 4: Otros personajes relevantes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_017",
+    "question": "¿Qué personaje se hace pasar por La Condesa trifaldi en la primera Parte?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "El Cura",
+        "isCorrect": false
+      },
+      {
+        "text": "Sansón Carrasco",
+        "isCorrect": false
+      },
+      {
+        "text": "Dorotea",
+        "isCorrect": true
+      },
+      {
+        "text": "La sobrina",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Dorotea'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 4: Otros personajes relevantes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_018",
+    "question": "¿Quién es el ventero que nombra caballero a Don Quijote?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Un noble",
+        "isCorrect": false
+      },
+      {
+        "text": "El ventero",
+        "isCorrect": true
+      },
+      {
+        "text": "El Cura",
+        "isCorrect": false
+      },
+      {
+        "text": "El duque",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El ventero'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 4: Otros personajes relevantes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_019",
+    "question": "¿Cuál es el nombre de la posadera con la que Don Quijote se ilusiona?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Aldonza Lorenzo",
+        "isCorrect": false
+      },
+      {
+        "text": "Dulcinea",
+        "isCorrect": false
+      },
+      {
+        "text": "Teresa Panza",
+        "isCorrect": false
+      },
+      {
+        "text": "Maritornes",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Maritornes'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 4: Otros personajes relevantes",
+    "id": "trivial_sobre_don_quijote_y_cervantes_020",
+    "question": "¿Qué personaje es conocido como el Caballero de los Espejos?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "Sansón Carrasco",
+        "isCorrect": true
+      },
+      {
+        "text": "El Caballero del Bosque",
+        "isCorrect": false
+      },
+      {
+        "text": "El ventero",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Sansón Carrasco'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 5: Temas y contexto literario",
+    "id": "trivial_sobre_don_quijote_y_cervantes_021",
+    "question": "¿Qué tipo de libros leía Don Quijote obsesivamente?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Libros de cocina",
+        "isCorrect": false
+      },
+      {
+        "text": "Novelas románticas",
+        "isCorrect": false
+      },
+      {
+        "text": "Libros de historia",
+        "isCorrect": false
+      },
+      {
+        "text": "Libros de caballerías",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Libros de caballerías'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 5: Temas y contexto literario",
+    "id": "trivial_sobre_don_quijote_y_cervantes_022",
+    "question": "¿A qué género literario pertenece la obra?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Comedia de enredos",
+        "isCorrect": false
+      },
+      {
+        "text": "Novela moderna/paródica",
+        "isCorrect": true
+      },
+      {
+        "text": "Epopeya",
+        "isCorrect": false
+      },
+      {
+        "text": "Tragedia",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Novela moderna/paródica'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 5: Temas y contexto literario",
+    "id": "trivial_sobre_don_quijote_y_cervantes_023",
+    "question": "¿En qué año se publicó la Primera Parte?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "1500",
+        "isCorrect": false
+      },
+      {
+        "text": "1615",
+        "isCorrect": false
+      },
+      {
+        "text": "1605",
+        "isCorrect": true
+      },
+      {
+        "text": "1616",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es '1605'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 5: Temas y contexto literario",
+    "id": "trivial_sobre_don_quijote_y_cervantes_024",
+    "question": "¿Quién es el autor real de la Segunda Parte?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Nadie",
+        "isCorrect": false
+      },
+      {
+        "text": "El autor apócrifo",
+        "isCorrect": false
+      },
+      {
+        "text": "Cervantes",
+        "isCorrect": true
+      },
+      {
+        "text": "Sansón Carrasco",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Cervantes'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 5: Temas y contexto literario",
+    "id": "trivial_sobre_don_quijote_y_cervantes_025",
+    "question": "¿En qué batalla fue herido Cervantes?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Normandía",
+        "isCorrect": false
+      },
+      {
+        "text": "Lepanto",
+        "isCorrect": true
+      },
+      {
+        "text": "Termópilas",
+        "isCorrect": false
+      },
+      {
+        "text": "La Alhambra",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Lepanto'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 6: El Quijote apócrifo y otros detalles",
+    "id": "trivial_sobre_don_quijote_y_cervantes_026",
+    "question": "¿Quién escribió el 'Quijote de Avellaneda'?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Cervantes",
+        "isCorrect": false
+      },
+      {
+        "text": "Lope de Vega",
+        "isCorrect": false
+      },
+      {
+        "text": "Un autor anónimo (Avellaneda)",
+        "isCorrect": true
+      },
+      {
+        "text": "Un amigo de Cervantes",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Un autor anónimo (Avellaneda)'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 6: El Quijote apócrifo y otros detalles",
+    "id": "trivial_sobre_don_quijote_y_cervantes_027",
+    "question": "¿Qué hace Don Quijote como respuesta al Quijote de Avellaneda?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Nada",
+        "isCorrect": false
+      },
+      {
+        "text": "Escribe una carta",
+        "isCorrect": false
+      },
+      {
+        "text": "Cambia su ruta a Zaragoza",
+        "isCorrect": true
+      },
+      {
+        "text": "Busca al autor",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Cambia su ruta a Zaragoza'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 6: El Quijote apócrifo y otros detalles",
+    "id": "trivial_sobre_don_quijote_y_cervantes_028",
+    "question": "¿Qué parte del cuerpo de Cervantes quedó inutilizada en Lepanto?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Ojo derecho",
+        "isCorrect": false
+      },
+      {
+        "text": "Mano izquierda",
+        "isCorrect": true
+      },
+      {
+        "text": "Pierna",
+        "isCorrect": false
+      },
+      {
+        "text": "Pie",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Mano izquierda'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 6: El Quijote apócrifo y otros detalles",
+    "id": "trivial_sobre_don_quijote_y_cervantes_029",
+    "question": "¿Dónde está enterrado Cervantes?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Alcalá de Henares",
+        "isCorrect": false
+      },
+      {
+        "text": "Convento de las Trinitarias, Madrid",
+        "isCorrect": true
+      },
+      {
+        "text": "Su pueblo natal",
+        "isCorrect": false
+      },
+      {
+        "text": "Toledo",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Convento de las Trinitarias, Madrid'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 6: El Quijote apócrifo y otros detalles",
+    "id": "trivial_sobre_don_quijote_y_cervantes_030",
+    "question": "¿Quién narra la historia del cautivo?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "Ruy Pérez de Viedma",
+        "isCorrect": true
+      },
+      {
+        "text": "El cura",
+        "isCorrect": false
+      },
+      {
+        "text": "El duque",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Ruy Pérez de Viedma'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 7: Aventuras y personajes secundarios",
+    "id": "trivial_sobre_don_quijote_y_cervantes_031",
+    "question": "¿Qué animal confunde Don Quijote con ejércitos rivales?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Vacas",
+        "isCorrect": false
+      },
+      {
+        "text": "Pájaros",
+        "isCorrect": false
+      },
+      {
+        "text": "Ovejas y carneros",
+        "isCorrect": true
+      },
+      {
+        "text": "Fantasmas",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Ovejas y carneros'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 7: Aventuras y personajes secundarios",
+    "id": "trivial_sobre_don_quijote_y_cervantes_032",
+    "question": "¿Qué hace Sancho en el episodio de los galeotes?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Los libera",
+        "isCorrect": false
+      },
+      {
+        "text": "Les da dinero",
+        "isCorrect": false
+      },
+      {
+        "text": "Se opone a liberarlos",
+        "isCorrect": true
+      },
+      {
+        "text": "Los delata",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Se opone a liberarlos'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 7: Aventuras y personajes secundarios",
+    "id": "trivial_sobre_don_quijote_y_cervantes_033",
+    "question": "¿Quién es el Caballero de los Leones?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Un nuevo personaje",
+        "isCorrect": false
+      },
+      {
+        "text": "El vencedor de Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "Don Quijote mismo",
+        "isCorrect": true
+      },
+      {
+        "text": "Un noble",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Don Quijote mismo'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 7: Aventuras y personajes secundarios",
+    "id": "trivial_sobre_don_quijote_y_cervantes_034",
+    "question": "¿A quién confunde Don Quijote con un señor de castillo?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Ruy Pérez",
+        "isCorrect": false
+      },
+      {
+        "text": "Dorotea",
+        "isCorrect": false
+      },
+      {
+        "text": "El ventero",
+        "isCorrect": true
+      },
+      {
+        "text": "Sancho",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El ventero'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 7: Aventuras y personajes secundarios",
+    "id": "trivial_sobre_don_quijote_y_cervantes_035",
+    "question": "¿Qué es la Ínsula Barataria?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Una isla real",
+        "isCorrect": false
+      },
+      {
+        "text": "Una villa propiedad de los duques",
+        "isCorrect": true
+      },
+      {
+        "text": "Un terreno real",
+        "isCorrect": false
+      },
+      {
+        "text": "Una ciudad imaginaria",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Una villa propiedad de los duques'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 8: El final de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_036",
+    "question": "¿Qué hace Don Quijote al final de la obra tras recuperar la cordura?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Vuelve a aventuras",
+        "isCorrect": false
+      },
+      {
+        "text": "Lee y medita",
+        "isCorrect": false
+      },
+      {
+        "text": "Se casa con Dulcinea",
+        "isCorrect": false
+      },
+      {
+        "text": "Quiere ser pastor",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Quiere ser pastor'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 8: El final de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_037",
+    "question": "¿Qué promesa hace tras ser vencido por el Caballero de la Blanca Luna?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No ser caballero",
+        "isCorrect": false
+      },
+      {
+        "text": "No comer carne",
+        "isCorrect": false
+      },
+      {
+        "text": "Permanecer un año en su aldea",
+        "isCorrect": true
+      },
+      {
+        "text": "No hablar con Sancho",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Permanecer un año en su aldea'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 8: El final de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_038",
+    "question": "¿Quién recita una poesía burlándose de Don Quijote?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El cura",
+        "isCorrect": false
+      },
+      {
+        "text": "Sansón Carrasco",
+        "isCorrect": false
+      },
+      {
+        "text": "Sancho",
+        "isCorrect": false
+      },
+      {
+        "text": "El barbero",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 8: El final de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_039",
+    "question": "¿A quién encuentra Don Quijote en la Cueva de Montesinos?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Blanca Luna",
+        "isCorrect": false
+      },
+      {
+        "text": "Sancho",
+        "isCorrect": false
+      },
+      {
+        "text": "Montesinos",
+        "isCorrect": true
+      },
+      {
+        "text": "Un dragón",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Montesinos'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 8: El final de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_040",
+    "question": "¿Quién se queda con Rocinante al final?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Sancho",
+        "isCorrect": false
+      },
+      {
+        "text": "La sobrina",
+        "isCorrect": false
+      },
+      {
+        "text": "El cura",
+        "isCorrect": false
+      },
+      {
+        "text": "Vuelve a ser un simple rocín",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 9: Más personajes y situaciones",
+    "id": "trivial_sobre_don_quijote_y_cervantes_041",
+    "question": "¿Cuál es el nombre del perro de Don Quijote?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "No tiene perro",
+        "isCorrect": false
+      },
+      {
+        "text": "No se menciona",
+        "isCorrect": false
+      },
+      {
+        "text": "Sanchico",
+        "isCorrect": false
+      },
+      {
+        "text": "Loa",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 9: Más personajes y situaciones",
+    "id": "trivial_sobre_don_quijote_y_cervantes_042",
+    "question": "¿Qué personaje femenino es objeto de burla en la venta?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "La sobrina",
+        "isCorrect": false
+      },
+      {
+        "text": "Maritornes",
+        "isCorrect": false
+      },
+      {
+        "text": "Dulcinea",
+        "isCorrect": false
+      },
+      {
+        "text": "La hija del ventero",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 9: Más personajes y situaciones",
+    "id": "trivial_sobre_don_quijote_y_cervantes_043",
+    "question": "¿Qué le pide el ventero a Don Quijote para nombrarlo caballero?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Oro",
+        "isCorrect": false
+      },
+      {
+        "text": "Su caballo",
+        "isCorrect": false
+      },
+      {
+        "text": "Que pague la venta",
+        "isCorrect": false
+      },
+      {
+        "text": "Una recompensa futura",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 9: Más personajes y situaciones",
+    "id": "trivial_sobre_don_quijote_y_cervantes_044",
+    "question": "¿Qué confunde Don Quijote con un ejército en su primera salida?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Vacas",
+        "isCorrect": false
+      },
+      {
+        "text": "Ovejas",
+        "isCorrect": false
+      },
+      {
+        "text": "Bandidos",
+        "isCorrect": false
+      },
+      {
+        "text": "Músicos",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 9: Más personajes y situaciones",
+    "id": "trivial_sobre_don_quijote_y_cervantes_045",
+    "question": "¿Cuál es el tema principal de la novela?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Un tesoro",
+        "isCorrect": false
+      },
+      {
+        "text": "Locura y realidad, fantasía e idealismo",
+        "isCorrect": false
+      },
+      {
+        "text": "Un romance",
+        "isCorrect": false
+      },
+      {
+        "text": "Un viaje de negocios",
+        "isCorrect": false
+      }
+    ],
+    "feedback": ""
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 10: El legado de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_046",
+    "question": "¿Cómo se conoce a Miguel de Cervantes?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Príncipe de las letras",
+        "isCorrect": false
+      },
+      {
+        "text": "Manco de Lepanto",
+        "isCorrect": true
+      },
+      {
+        "text": "Poeta de España",
+        "isCorrect": false
+      },
+      {
+        "text": "Rey de la literatura",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Manco de Lepanto'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 10: El legado de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_047",
+    "question": "¿En qué se inspira la obra para parodiar al caballero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Libros de historia",
+        "isCorrect": false
+      },
+      {
+        "text": "Poemas épicos",
+        "isCorrect": false
+      },
+      {
+        "text": "Libros de caballerías",
+        "isCorrect": true
+      },
+      {
+        "text": "Novelas de espías",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Libros de caballerías'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 10: El legado de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_048",
+    "question": "¿Dónde fue capturado Cervantes, llevándolo al cautiverio?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Cerca de Italia",
+        "isCorrect": false
+      },
+      {
+        "text": "En Lepanto",
+        "isCorrect": false
+      },
+      {
+        "text": "Por piratas berberiscos",
+        "isCorrect": false
+      },
+      {
+        "text": "Costa de África",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Costa de África'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 10: El legado de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_049",
+    "question": "¿Cuál es el título completo de la obra?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Historia de Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "Caballero de la Triste Figura",
+        "isCorrect": false
+      },
+      {
+        "text": "Don Quijote de la Mancha",
+        "isCorrect": false
+      },
+      {
+        "text": "El ingenioso hidalgo Don Quijote de la Mancha",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El ingenioso hidalgo Don Quijote de la Mancha'."
+  },
+  {
+    "quiz": "Trivial sobre Don Quijote y Cervantes",
+    "group": "Grupo 10: El legado de la obra",
+    "id": "trivial_sobre_don_quijote_y_cervantes_050",
+    "question": "¿Quién pronuncia la frase inicial 'En un lugar de la Mancha...'?",
+    "type": "single",
+    "difficulty": "hard",
+    "answers": [
+      {
+        "text": "Sancho Panza",
+        "isCorrect": false
+      },
+      {
+        "text": "Don Quijote",
+        "isCorrect": false
+      },
+      {
+        "text": "El cura",
+        "isCorrect": false
+      },
+      {
+        "text": "El narrador",
+        "isCorrect": true
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El narrador'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_001",
+    "question": "¿En qué provincia española nació Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Toledo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Albacete.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ciudad Real.",
+        "isCorrect": true
+      },
+      {
+        "text": "Sevilla.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Ciudad Real.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_002",
+    "question": "¿Cuál es la ciudad natal de Alfredo Palmero?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "Almodóvar del Campo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Madrid.",
+        "isCorrect": false
+      },
+      {
+        "text": "Toledo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Barcelona.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'Almodóvar del Campo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_003",
+    "question": "¿A qué temprana edad mostró Alfredo Palmero su inclinación por la pintura?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "A los 20 años.",
+        "isCorrect": false
+      },
+      {
+        "text": "A los 15 años.",
+        "isCorrect": false
+      },
+      {
+        "text": "A los 10 años.",
+        "isCorrect": true
+      },
+      {
+        "text": "En la vejez.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'A los 10 años.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_004",
+    "question": "¿Cuál fue uno de los principales premios que recibió Palmero en su juventud?",
+    "type": "single",
+    "difficulty": "medium",
+    "answers": [
+      {
+        "text": "El Premio Goya.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Premio Nobel de Arte.",
+        "isCorrect": false
+      },
+      {
+        "text": "El Premio Nacional de Dibujo.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Premio Velázquez.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "La respuesta correcta es 'El Premio Nacional de Dibujo.'."
+  },
+  {
+    "quiz": "Trivial sobre Alfredo Palmero",
+    "group": "Grupo 1: Biografía y Orígenes",
+    "id": "trivial_sobre_alfredo_palmero_005",
+    "question": "¿En qué país estudió y perfeccionó su técnica artística?",
+    "type": "multiple",
+    "difficulty": "easy",
+    "answers": [
+      {
+        "text": "Francia, concretamente en París.",
+        "isCorrect": true
+      },
+      {
+        "text": "Italia",
+        "isCorrect": true
+      },
+      {
+        "text": "España.",
+        "isCorrect": false
+      },
+      {
+        "text": "Estados Unidos, en Nueva York.",
+        "isCorrect": false
+      }
+    ],
+    "feedback": "Respuestas correctas: Francia, concretamente en París., Italia."
+  }
+]
