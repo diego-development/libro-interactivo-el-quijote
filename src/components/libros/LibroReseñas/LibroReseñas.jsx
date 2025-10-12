@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import HTMLFlipBook from "react-pageflip";
 import './LibroReseñas.css';
-import PageWrapper from '../PageWrapper';
-import fondoLibro from '../../assets/fondo-libro.png';
+import PageWrapper from '../../PageWrapper';
+import fondoLibro from '../../../assets/fondo-libro.png';
 import PaginaReseñas from './PaginaReseñas';
 
 function LibroReseñas() {
