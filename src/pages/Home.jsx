@@ -20,7 +20,7 @@ export default function Home() {
       // Esperamos 1.5 segundos antes de navegar
       setTimeout(() => {
         navigate("/menu");
-      }, 1500);
+      }, 2500);
     };
   };
 
