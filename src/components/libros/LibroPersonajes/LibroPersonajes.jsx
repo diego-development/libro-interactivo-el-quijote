@@ -52,6 +52,9 @@ function LibroPersonajes() {
     { fondo: fondo3, fondoVideo: fondoVideo3, video: video3, marcoVideo: marco3 },
   ];
 
+  // 📊 Total de páginas (portada + personajes*2 + contraportada)
+  const totalPaginas = 1 + personajes.length * 2 + 1;
+
   // 📏 Ajustar tamaño del libro al viewport
   useEffect(() => {
     const updateBookSize = () => {
@@ -71,6 +74,7 @@ function LibroPersonajes() {
     window.addEventListener("resize", updateBookSize);
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
+
   // 🎧 Manejo de sonidos
   const handleFlip = (e) => {
     const index = e.data;
@@ -83,7 +87,6 @@ function LibroPersonajes() {
         s.current.currentTime = 0;
       } catch {}
     });
-
     if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => {});
     } 
@@ -96,9 +99,11 @@ function LibroPersonajes() {
       } else {
         sonidoPagina.current.play().catch(() => {});
       }
-    } 
-     
-    else {
+    }  else if (index === totalPaginas -3 && direction === "backward") {
+      sonidoContraportada.current.play().catch(() => {});
+    } else if (index === totalPaginas - 1 && direction === "forward") {
+      sonidoContraportada.current.play().catch(() => {});
+    } else {
       sonidoPagina.current.play().catch(() => {});
     }
   };
@@ -140,7 +145,7 @@ function LibroPersonajes() {
 
           {/* 🔹 Páginas de personajes */}
           {personajes.flatMap((p, i) => [
-            // 📘 Página izquierda: fondo decorativo
+            // 📘 Página izquierda
             <div
               key={`fondo-${i}`}
               className="page relative h-full w-full overflow-hidden"
@@ -152,7 +157,7 @@ function LibroPersonajes() {
               />
             </div>,
 
-            // 📙 Página derecha: fondoVideo + video + marcoVideo
+            // 📙 Página derecha con video y marco
             <div
               key={`video-${i}`}
               className="page relative h-full w-full overflow-hidden flex items-center justify-center"
