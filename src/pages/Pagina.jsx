@@ -3,6 +3,7 @@ import Frases from "../components/libros/LibroFrases/LibroFrases";
 import Personajes from "../components/libros/LibroPersonajes/LibroPersonajes";
 import Ejercicios from "../components/libros/LibroEjercicios/LibroEjercicios";
 import Reseñas from "../components/libros/LibroReseñas/LibroReseñas";
+import Volver from "../assets/icono-nombre-pag.png";
 
 export default function Pagina({ num }) {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function Pagina({ num }) {
     <>
       {/* 🔙 Botón volver */}
       <img
-        src="/icono-nombre-pag.png"
+        src={Volver}
         alt="Volver"
         onClick={() => navigate("/menu")}
         className="

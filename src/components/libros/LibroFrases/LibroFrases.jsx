@@ -17,6 +17,11 @@ import fondo4 from "../../../assets/LibroFrases/frase4-der.png";
 import fondo5 from "../../../assets/LibroFrases/frase5-izq.png";
 import fondo6 from "../../../assets/LibroFrases/frase6-der.png";
 
+// 🎵 Sonidos
+import sonidoPaginaSrc from "../../../assets/sonidos/pagina.m4a";
+import sonidoPortadaSrc from "../../../assets/sonidos/portada.m4a";
+import sonidoContraportadaSrc from "../../../assets/sonidos/portada.m4a";
+
 function LibroFrases() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [paginas, setPaginas] = useState([]);
@@ -40,9 +45,9 @@ function LibroFrases() {
   ];
 
   // 🎵 Sonidos
-  const sonidoPagina = useRef(new Audio("/libros/sonidos/pagina.m4a"));
-  const sonidoPortada = useRef(new Audio("/libros/sonidos/portada.m4a"));
-  const sonidoContraportada = useRef(new Audio("/libros/sonidos/portada.m4a"));
+  const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
+  const sonidoPortada = useRef(new Audio(sonidoPortadaSrc));
+  const sonidoContraportada = useRef(new Audio(sonidoContraportadaSrc));
 
   useEffect(() => {
     sonidoPagina.current.volume = 0.6;

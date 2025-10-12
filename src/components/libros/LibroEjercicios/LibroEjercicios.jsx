@@ -201,9 +201,6 @@ return (
             alt="Primera página"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
-          <div className="relative z-10 text-center text-[#333] font-[Caveat] text-3xl opacity-80 px-4">
-            <p>“Demuestra cuánto sabes...”</p>
-          </div>
         </div>
 
         {/* 📄 Páginas con ejercicios (máximo 2 hojas internas) */}

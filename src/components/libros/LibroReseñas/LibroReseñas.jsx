@@ -12,6 +12,11 @@ import ultimaPaginaImg from "../../../assets/LibroReseñas/ultimaPagina.png";
 import hojaFrenteImg from "../../../assets/LibroReseñas/hojaFrente.png";
 import hojaReversoImg from "../../../assets/LibroReseñas/hojaReverso.png";
 
+// 🎵 Sonidos
+import sonidoPaginaSrc from "../../../assets/sonidos/pagina.m4a";
+import sonidoPortadaSrc from "../../../assets/sonidos/portada.m4a";
+import sonidoContraportadaSrc from "../../../assets/sonidos/portada.m4a";
+
 function LibroReseñas({ maxHojas = 2 }) {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [reseñas, setReseñas] = useState([]);
@@ -19,10 +24,9 @@ function LibroReseñas({ maxHojas = 2 }) {
   const [lastPage, setLastPage] = useState(0);
   const flipBookRef = useRef(null);
 
-  // 🎵 Sonidos
-  const sonidoPagina = useRef(new Audio("/libros/sonidos/pagina.m4a"));
-  const sonidoPortada = useRef(new Audio("/libros/sonidos/portada.m4a"));
-  const sonidoContraportada = useRef(new Audio("/libros/sonidos/portada.m4a"));
+  const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
+  const sonidoPortada = useRef(new Audio(sonidoPortadaSrc));
+  const sonidoContraportada = useRef(new Audio(sonidoContraportadaSrc));
 
   useEffect(() => {
     sonidoPagina.current.volume = 0.6;

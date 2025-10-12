@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import background from "/fondo.gif";
-import loadingBackground from "/cargando.gif"; // Imagen temporal
+import background from "../assets/fondo.gif";
+import loadingBackground from "../assets/cargando.gif";
 import PageWrapper from "../components/PageWrapper";
 
 export default function Home() {
