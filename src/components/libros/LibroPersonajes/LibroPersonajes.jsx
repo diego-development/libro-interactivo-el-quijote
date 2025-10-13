@@ -59,6 +59,7 @@ function LibroPersonajes() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [lastPage, setLastPage] = useState(0);
   const flipBookRef = useRef(null);
+  const videoRefs = useRef([]);
 
   // 🎵 Sonidos
   const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
@@ -117,11 +118,18 @@ function LibroPersonajes() {
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
 
-  // 🧩 Refs para todos los videos
-  const videoRefs = useRef([]);
+  // 🚀 Precarga solo el primer video al cargar la página
+  useEffect(() => {
+    const first = videoRefs.current[0];
+    if (first) {
+      first.preload = "auto";
+      first.oncanplaythrough = () => {
+        first.play().catch(() => {});
+      };
+    }
+  }, []);
 
-  // 🎧 Sonidos + control de videos al pasar página
-  // 🎧 Manejo de sonidos + control de videos
+  // 🎧 Sonidos + control de videos
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
@@ -132,10 +140,10 @@ function LibroPersonajes() {
       try {
         s.current.pause();
         s.current.currentTime = 0;
-      } catch { }
+      } catch {}
     });
 
-    if (index === 0 && direction === "backward") {
+     if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => { });
     } else if (index === 0 && direction === "forward") {
       sonidoPortada.current.play().catch(() => { });
@@ -153,36 +161,17 @@ function LibroPersonajes() {
       sonidoPagina.current.play().catch(() => { });
     }
 
-    // 🧩 Control de videos visibles
+    // 🧩 Reproduce los videos visibles
     const videoIndex = Math.floor((index - 1) / 2);
     videoRefs.current.forEach((vid, i) => {
       if (!vid) return;
       if (i === videoIndex || i === videoIndex + 1) {
-        vid.play().catch(() => { });
+        vid.play().catch(() => {});
       } else {
         vid.pause();
       }
     });
   };
-
-  // 🚀 Al montar, solo reproducir el primero
-  useEffect(() => {
-    const first = videoRefs.current[0];
-    if (first) {
-      first.onloadeddata = () => {
-        first.play().catch(() => { });
-      };
-    }
-  }, []);
-
-
-  // 🚀 Reproduce el primer video suavemente al cargar
-  useEffect(() => {
-    const first = videoRefs.current[0];
-    if (first) {
-      setTimeout(() => first.play().catch(() => { }), 600);
-    }
-  }, []);
 
   return (
     <PageWrapper>
@@ -233,14 +222,13 @@ function LibroPersonajes() {
                 className="absolute inset-0 h-full w-full object-cover z-0"
               />
 
-              {/* 🎥 Video optimizado */}
               <video
                 ref={(el) => (videoRefs.current[i] = el)}
                 src={p.video}
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload={i === 0 ? "auto" : "none"}  // 🟩 solo el primero se precarga
                 className="absolute object-contain"
                 style={{
                   top: "50%",
