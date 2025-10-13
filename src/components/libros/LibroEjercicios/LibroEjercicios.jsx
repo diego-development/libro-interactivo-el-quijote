@@ -9,7 +9,7 @@ import sonidoPortadaSrc from '../../../assets/sonidos/portada.m4a';
 import sonidoContraportadaSrc from '../../../assets/sonidos/portada.m4a';
 
 import portadaImg from '../../../assets/LibroEjercicios/portada.png';
-import contraportadaImg from '../../../assets/LibroEjercicios/portada.png';
+import contraportadaImg from '../../../assets/LibroEjercicios/contraportada.png';
 import primeraPaginaImg from '../../../assets/LibroEjercicios/primeraPagina.png';
 import ultimaPaginaImg from '../../../assets/LibroEjercicios/ultimaPagina.png';
 import hojaFrenteImg from '../../../assets/LibroEjercicios/hojaFrente.png';

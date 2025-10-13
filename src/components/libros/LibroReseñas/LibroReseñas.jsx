@@ -5,7 +5,7 @@ import fondoLibro from "../../../assets/fondo-libro.png";
 import PaginaReseñas from "./PaginaReseñas";
 
 // 🖼️ Imágenes
-import portadaImg from "../../../assets/LibroEjercicios/portada.png";
+import portadaImg from "../../../assets/LibroReseñas/portada.png";
 import contraportadaImg from "../../../assets/LibroReseñas/contraportada.png";
 import primeraPaginaImg from "../../../assets/LibroReseñas/primeraPagina.png";
 import ultimaPaginaImg from "../../../assets/LibroReseñas/ultimaPagina.png";

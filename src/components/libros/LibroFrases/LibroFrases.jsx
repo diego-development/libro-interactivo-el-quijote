@@ -9,13 +9,60 @@ import contraportadaImg from "../../../assets/LibroFrases/contraportada.png";
 import primeraPaginaImg from "../../../assets/LibroFrases/primeraPagina.png";
 import ultimaPaginaImg from "../../../assets/LibroFrases/ultimaPagina.png";
 
-// 🖼️ Fondos configurables para las hojas internas
-import fondo1 from "../../../assets/LibroFrases/frase1-der.png";
-import fondo2 from "../../../assets/LibroFrases/frase2-izq.png";
-import fondo3 from "../../../assets/LibroFrases/frase3-izq.png";
-import fondo4 from "../../../assets/LibroFrases/frase4-der.png";
-import fondo5 from "../../../assets/LibroFrases/frase5-izq.png";
-import fondo6 from "../../../assets/LibroFrases/frase6-der.png";
+
+// Imágenes de frases de Quijote
+import quijote1Der from "../../../assets/LibroFrases/frases/quijote-1-der.png";
+import quijote1Izq from "../../../assets/LibroFrases/frases/quijote-1-izq.png";
+import quijote2Der from "../../../assets/LibroFrases/frases/quijote-2-der.png";
+import quijote2Izq from "../../../assets/LibroFrases/frases/quijote-2-izq.png";
+import quijote3Der from "../../../assets/LibroFrases/frases/quijote-3-der.png";
+import quijote3Izq from "../../../assets/LibroFrases/frases/quijote-3-izq.png";
+import quijote4Der from "../../../assets/LibroFrases/frases/quijote-4-der.png";
+import quijote4Izq from "../../../assets/LibroFrases/frases/quijote-4-izq.png";
+import quijote5Der from "../../../assets/LibroFrases/frases/quijote-5-der.png";
+import quijote5Izq from "../../../assets/LibroFrases/frases/quijote-5-izq.png";
+import quijote6Der from "../../../assets/LibroFrases/frases/quijote-6-der.png";
+import quijote6Izq from "../../../assets/LibroFrases/frases/quijote-6-izq.png";
+import quijote7Der from "../../../assets/LibroFrases/frases/quijote-7-der.png";
+import quijote7Izq from "../../../assets/LibroFrases/frases/quijote-7-izq.png";
+import quijote8Der from "../../../assets/LibroFrases/frases/quijote-8-der.png";
+import quijote8Izq from "../../../assets/LibroFrases/frases/quijote-8-izq.png";
+import quijote9Der from "../../../assets/LibroFrases/frases/quijote-9-der.png";
+import quijote9Izq from "../../../assets/LibroFrases/frases/quijote-9-izq.png";
+import quijote10Der from "../../../assets/LibroFrases/frases/quijote-10-der.png";
+import quijote10Izq from "../../../assets/LibroFrases/frases/quijote-10-izq.png";
+import quijote11Der from "../../../assets/LibroFrases/frases/quijote-11-der.png";
+import quijote11Izq from "../../../assets/LibroFrases/frases/quijote-11-izq.png";
+import quijote12Der from "../../../assets/LibroFrases/frases/quijote-12-der.png";
+import quijote12Izq from "../../../assets/LibroFrases/frases/quijote-12-izq.png";
+import quijote13Izq from "../../../assets/LibroFrases/frases/quijote-13-izq.png";
+
+// Imágenes de frases de Sancho
+import sancho1Der from "../../../assets/LibroFrases/frases/sancho-1-der.png";
+import sancho1Izq from "../../../assets/LibroFrases/frases/sancho-1-izq.png";
+import sancho2Der from "../../../assets/LibroFrases/frases/sancho-2-der.png";
+import sancho2Izq from "../../../assets/LibroFrases/frases/sancho-2-izq.png";
+import sancho3Der from "../../../assets/LibroFrases/frases/sancho-3-der.png";
+import sancho3Izq from "../../../assets/LibroFrases/frases/sancho-3-izq.png";
+import sancho4Der from "../../../assets/LibroFrases/frases/sancho-4-der.png";
+import sancho4Izq from "../../../assets/LibroFrases/frases/sancho-4-izq.png";
+import sancho5Der from "../../../assets/LibroFrases/frases/sancho-5-der.png";
+import sancho5Izq from "../../../assets/LibroFrases/frases/sancho-5-izq.png";
+import sancho6Der from "../../../assets/LibroFrases/frases/sancho-6-der.png";
+import sancho6Izq from "../../../assets/LibroFrases/frases/sancho-6-izq.png";
+import sancho7Der from "../../../assets/LibroFrases/frases/sancho-7-der.png";
+import sancho7Izq from "../../../assets/LibroFrases/frases/sancho-7-izq.png";
+import sancho8Der from "../../../assets/LibroFrases/frases/sancho-8-der.png";
+import sancho8Izq from "../../../assets/LibroFrases/frases/sancho-8-izq.png";
+import sancho9Der from "../../../assets/LibroFrases/frases/sancho-9-der.png";
+import sancho9Izq from "../../../assets/LibroFrases/frases/sancho-9-izq.png";
+import sancho10Der from "../../../assets/LibroFrases/frases/sancho-10-der.png";
+import sancho10Izq from "../../../assets/LibroFrases/frases/sancho-10-izq.png";
+import sancho11Der from "../../../assets/LibroFrases/frases/sancho-11-der.png";
+import sancho11Izq from "../../../assets/LibroFrases/frases/sancho-11-izq.png";
+import sancho12Der from "../../../assets/LibroFrases/frases/sancho-12-der.png";
+import sancho12Izq from "../../../assets/LibroFrases/frases/sancho-12-izq.png";
+import sancho13Izq from "../../../assets/LibroFrases/frases/sancho-13-izq.png";
 
 // 🎵 Sonidos
 import sonidoPaginaSrc from "../../../assets/sonidos/pagina.m4a";
@@ -29,20 +76,62 @@ function LibroFrases() {
   const flipBookRef = useRef(null);
 
   // 🔹 Todas las hojas posibles
-  const HOJAS_CONFIG = [
-    { fondo: fondo1, lado: "derecho" },
-    { fondo: fondo2, lado: "izquierdo" },
-    { fondo: fondo3, lado: "izquierdo" },
-    { fondo: fondo4, lado: "derecho" },
-    { fondo: fondo5, lado: "izquierdo" },
-    { fondo: fondo6, lado: "derecho" },
-    { fondo: fondo1, lado: "derecho" },
-    { fondo: fondo2, lado: "izquierdo" },
-    { fondo: fondo3, lado: "izquierdo" },
-    { fondo: fondo4, lado: "derecho" },
-    { fondo: fondo5, lado: "izquierdo" },
-    { fondo: fondo6, lado: "derecho" },
-  ];
+const HOJAS_CONFIG = [
+
+  // Quijote
+  { fondo: quijote1Der, lado: "derecho" },
+  { fondo: quijote1Izq, lado: "izquierdo" },
+  { fondo: quijote2Der, lado: "derecho" },
+  { fondo: quijote2Izq, lado: "izquierdo" },
+  { fondo: quijote3Der, lado: "derecho" },
+  { fondo: quijote3Izq, lado: "izquierdo" },
+  { fondo: quijote4Der, lado: "derecho" },
+  { fondo: quijote4Izq, lado: "izquierdo" },
+  { fondo: quijote5Der, lado: "derecho" },
+  { fondo: quijote5Izq, lado: "izquierdo" },
+  { fondo: quijote6Der, lado: "derecho" },
+  { fondo: quijote6Izq, lado: "izquierdo" },
+  { fondo: quijote7Der, lado: "derecho" },
+  { fondo: quijote7Izq, lado: "izquierdo" },
+  { fondo: quijote8Der, lado: "derecho" },
+  { fondo: quijote8Izq, lado: "izquierdo" },
+  { fondo: quijote9Der, lado: "derecho" },
+  { fondo: quijote9Izq, lado: "izquierdo" },
+  { fondo: quijote10Der, lado: "derecho" },
+  { fondo: quijote10Izq, lado: "izquierdo" },
+  { fondo: quijote11Der, lado: "derecho" },
+  { fondo: quijote11Izq, lado: "izquierdo" },
+  { fondo: quijote12Der, lado: "derecho" },
+  { fondo: quijote12Izq, lado: "izquierdo" },
+  { fondo: quijote13Izq, lado: "izquierdo" },
+
+  // Sancho
+  { fondo: sancho1Der, lado: "derecho" },
+  { fondo: sancho1Izq, lado: "izquierdo" },
+  { fondo: sancho2Der, lado: "derecho" },
+  { fondo: sancho2Izq, lado: "izquierdo" },
+  { fondo: sancho3Der, lado: "derecho" },
+  { fondo: sancho3Izq, lado: "izquierdo" },
+  { fondo: sancho4Der, lado: "derecho" },
+  { fondo: sancho4Izq, lado: "izquierdo" },
+  { fondo: sancho5Der, lado: "derecho" },
+  { fondo: sancho5Izq, lado: "izquierdo" },
+  { fondo: sancho6Der, lado: "derecho" },
+  { fondo: sancho6Izq, lado: "izquierdo" },
+  { fondo: sancho7Der, lado: "derecho" },
+  { fondo: sancho7Izq, lado: "izquierdo" },
+  { fondo: sancho8Der, lado: "derecho" },
+  { fondo: sancho8Izq, lado: "izquierdo" },
+  { fondo: sancho9Der, lado: "derecho" },
+  { fondo: sancho9Izq, lado: "izquierdo" },
+  { fondo: sancho10Der, lado: "derecho" },
+  { fondo: sancho10Izq, lado: "izquierdo" },
+  { fondo: sancho11Der, lado: "derecho" },
+  { fondo: sancho11Izq, lado: "izquierdo" },
+  { fondo: sancho12Der, lado: "derecho" },
+  { fondo: sancho12Izq, lado: "izquierdo" },
+  { fondo: sancho13Izq, lado: "izquierdo" }
+];
 
   // 🎵 Sonidos
   const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
