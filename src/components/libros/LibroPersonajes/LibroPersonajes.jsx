@@ -3,13 +3,16 @@ import HTMLFlipBook from "react-pageflip";
 import PageWrapper from "../../PageWrapper";
 import fondoLibro from "../../../assets/fondo-libro.png";
 
+// 🎵 Sonidos
 import sonidoPaginaSrc from "../../../assets/sonidos/pagina.m4a";
 import sonidoPortadaSrc from "../../../assets/sonidos/portada.m4a";
 import sonidoContraportadaSrc from "../../../assets/sonidos/portada.m4a";
 
+// 📕 Imágenes del libro
 import portadaImg from "../../../assets/LibroPersonajes/portada.png";
 import contraportadaImg from "../../../assets/LibroPersonajes/contraportada.png";
 
+// 🎥 Fondos
 import fondo1 from "../../../assets/LibroPersonajes/personajes/1.png";
 import fondo2 from "../../../assets/LibroPersonajes/personajes/2.png";
 import fondo3 from "../../../assets/LibroPersonajes/personajes/3.png";
@@ -34,6 +37,7 @@ import fondo20 from "../../../assets/LibroPersonajes/personajes/20.png";
 import fondoVideo from "../../../assets/LibroPersonajes/fondo-video.png";
 import marco from "../../../assets/LibroPersonajes/marco-transparente.png";
 
+// 🎞️ Videos
 import video1 from "../../../assets/LibroPersonajes/videos/1.mp4";
 import video2 from "../../../assets/LibroPersonajes/videos/2.mp4";
 import video3 from "../../../assets/LibroPersonajes/videos/3.mp4";
@@ -55,13 +59,15 @@ import video18 from "../../../assets/LibroPersonajes/videos/18.mp4";
 import video19 from "../../../assets/LibroPersonajes/videos/19.mp4";
 import video20 from "../../../assets/LibroPersonajes/videos/20.mp4";
 
+const totalPaginas = 1 + personajes.length * 2 + 1;
+
 function LibroPersonajes() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [lastPage, setLastPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const flipBookRef = useRef(null);
-  const videoRefs = useRef([]);
 
-  // 🎵 Sonidos
+  // 🔊 Sonidos
   const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
   const sonidoPortada = useRef(new Audio(sonidoPortadaSrc));
   const sonidoContraportada = useRef(new Audio(sonidoContraportadaSrc));
@@ -72,33 +78,31 @@ function LibroPersonajes() {
     sonidoContraportada.current.volume = 1.0;
   }, []);
 
-  // 📖 Lista de personajes
+  // 📖 Lista completa de personajes
   const personajes = [
-    { fondo: fondo1, video: video1 },
-    { fondo: fondo2, video: video2 },
-    { fondo: fondo3, video: video3 },
-    { fondo: fondo4, video: video4 },
-    { fondo: fondo5, video: video5 },
-    { fondo: fondo6, video: video6 },
-    { fondo: fondo7, video: video7 },
-    { fondo: fondo8, video: video8 },
-    { fondo: fondo9, video: video9 },
-    { fondo: fondo10, video: video10 },
-    { fondo: fondo11, video: video11 },
-    { fondo: fondo12, video: video12 },
-    { fondo: fondo13, video: video13 },
-    { fondo: fondo14, video: video14 },
-    { fondo: fondo15, video: video15 },
-    { fondo: fondo16, video: video16 },
-    { fondo: fondo17, video: video17 },
-    { fondo: fondo18, video: video18 },
-    { fondo: fondo19, video: video19 },
-    { fondo: fondo20, video: video20 },
-  ].map((p) => ({ ...p, fondoVideo, marcoVideo: marco }));
+    { fondo: fondo1, fondoVideo, video: video1, marcoVideo: marco },
+    { fondo: fondo2, fondoVideo, video: video2, marcoVideo: marco },
+    { fondo: fondo3, fondoVideo, video: video3, marcoVideo: marco },
+    { fondo: fondo4, fondoVideo, video: video4, marcoVideo: marco },
+    { fondo: fondo5, fondoVideo, video: video5, marcoVideo: marco },
+    { fondo: fondo6, fondoVideo, video: video6, marcoVideo: marco },
+    { fondo: fondo7, fondoVideo, video: video7, marcoVideo: marco },
+    { fondo: fondo8, fondoVideo, video: video8, marcoVideo: marco },
+    { fondo: fondo9, fondoVideo, video: video9, marcoVideo: marco },
+    { fondo: fondo10, fondoVideo, video: video10, marcoVideo: marco },
+    { fondo: fondo11, fondoVideo, video: video11, marcoVideo: marco },
+    { fondo: fondo12, fondoVideo, video: video12, marcoVideo: marco },
+    { fondo: fondo13, fondoVideo, video: video13, marcoVideo: marco },
+    { fondo: fondo14, fondoVideo, video: video14, marcoVideo: marco },
+    { fondo: fondo15, fondoVideo, video: video15, marcoVideo: marco },
+    { fondo: fondo16, fondoVideo, video: video16, marcoVideo: marco },
+    { fondo: fondo17, fondoVideo, video: video17, marcoVideo: marco },
+    { fondo: fondo18, fondoVideo, video: video18, marcoVideo: marco },
+    { fondo: fondo19, fondoVideo, video: video19, marcoVideo: marco },
+    { fondo: fondo20, fondoVideo, video: video20, marcoVideo: marco },
+  ];
 
-  const totalPaginas = 1 + personajes.length * 2 + 1;
-
-  // 📏 Ajuste responsivo
+  // 📏 Ajustar tamaño del libro
   useEffect(() => {
     const updateBookSize = () => {
       const availableWidth = window.innerWidth * 0.9;
@@ -112,30 +116,19 @@ function LibroPersonajes() {
       }
       setBookSize({ width, height });
     };
-
     updateBookSize();
     window.addEventListener("resize", updateBookSize);
     return () => window.removeEventListener("resize", updateBookSize);
   }, []);
 
-  // 🚀 Precarga solo el primer video al cargar la página
-  useEffect(() => {
-    const first = videoRefs.current[0];
-    if (first) {
-      first.preload = "auto";
-      first.oncanplaythrough = () => {
-        first.play().catch(() => {});
-      };
-    }
-  }, []);
-
-  // 🎧 Sonidos + control de videos
+  // 📖 Lógica de sonidos igual a LibroEjercicios
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
     setLastPage(index);
+    setCurrentPage(index);
 
-    // 🎵 Sonidos
+    // detener sonidos previos
     [sonidoPagina, sonidoPortada, sonidoContraportada].forEach((s) => {
       try {
         s.current.pause();
@@ -143,37 +136,29 @@ function LibroPersonajes() {
       } catch {}
     });
 
+    const totalPages = personajes.length * 2 + 2;
+    const lastIndex = totalPages - 1;
+
     if (index === 0 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => {});
+      sonidoContraportada.current.play().catch(() => { });
     } else if (index === 0 && direction === "forward") {
-      sonidoPortada.current.play().catch(() => {});
+      sonidoPortada.current.play().catch(() => { });
     } else if (index === 1) {
       if (direction === "forward") {
-        sonidoPortada.current.play().catch(() => {});
+        sonidoPortada.current.play().catch(() => { });
       } else {
-        sonidoPagina.current.play().catch(() => {});
+        sonidoPagina.current.play().catch(() => { });
       }
     } else if (index === totalPaginas - 3 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => {});
+      sonidoContraportada.current.play().catch(() => { });
     } else if (index === totalPaginas - 1 && direction === "forward") {
-      sonidoContraportada.current.play().catch(() => {});
+      sonidoContraportada.current.play().catch(() => { });
     } else {
-      sonidoPagina.current.play().catch(() => {});
+      sonidoPagina.current.play().catch(() => { });
     }
-
-    // 🧩 Control de videos mejorado
-    const videoIndex = Math.floor((index - 1) / 2);
-    videoRefs.current.forEach((vid, i) => {
-      if (!vid) return;
-      if (i === videoIndex || i === videoIndex + 1) {
-        vid.currentTime = 0; // 🔁 Reinicia el video cada vez que aparece
-        vid.play().catch(() => {});
-      } else {
-        vid.pause();
-      }
-    });
   };
 
+  // 📖 Render
   return (
     <PageWrapper>
       <div
@@ -193,7 +178,11 @@ function LibroPersonajes() {
           drawShadow
           maxShadowOpacity={0.5}
           onFlip={handleFlip}
-          style={{ backgroundColor: "transparent" }}
+          style={{
+            backgroundColor: "transparent",
+            isolation: "isolate",
+            overflow: "hidden",
+          }}
         >
           {/* 🟦 Portada */}
           <div className="page relative h-full w-full overflow-hidden">
@@ -206,13 +195,19 @@ function LibroPersonajes() {
 
           {/* 🔹 Páginas de personajes */}
           {personajes.flatMap((p, i) => [
-            <div key={`fondo-${i}`} className="page relative h-full w-full overflow-hidden">
+            // 📘 Página izquierda (fondo)
+            <div
+              key={`fondo-${i}`}
+              className="page relative h-full w-full overflow-hidden"
+            >
               <img
                 src={p.fondo}
-                alt={`Fondo personaje ${i + 1}`}
+                alt={`Personaje ${i + 1} fondo`}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>,
+
+            // 📙 Página derecha con video
             <div
               key={`video-${i}`}
               className="page relative h-full w-full overflow-hidden flex items-center justify-center"
@@ -222,14 +217,15 @@ function LibroPersonajes() {
                 alt={`Fondo video ${i + 1}`}
                 className="absolute inset-0 h-full w-full object-cover z-0"
               />
-
               <video
-                ref={(el) => (videoRefs.current[i] = el)}
                 src={p.video}
                 muted
                 loop
                 playsInline
-                preload={i === 0 ? "auto" : "none"} // 🟩 Solo el primero se precarga
+                autoPlay
+                preload="metadata"
+                disablePictureInPicture
+                controls={false}
                 className="absolute object-contain"
                 style={{
                   top: "50%",
@@ -242,9 +238,7 @@ function LibroPersonajes() {
                   pointerEvents: "none",
                   zIndex: 2,
                 }}
-                onEnded={(e) => e.target.play()} // 🔁 En caso de que se detenga
               />
-
               <img
                 src={p.marcoVideo}
                 alt={`Marco video ${i + 1}`}
