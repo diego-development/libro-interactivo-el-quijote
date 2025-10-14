@@ -59,7 +59,7 @@ import video18 from "../../../assets/LibroPersonajes/videos/18.mp4";
 import video19 from "../../../assets/LibroPersonajes/videos/19.mp4";
 import video20 from "../../../assets/LibroPersonajes/videos/20.mp4";
 
-const totalPaginas = 1 + personajes.length * 2 + 1;
+
 
 function LibroPersonajes() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
@@ -102,6 +102,7 @@ function LibroPersonajes() {
     { fondo: fondo20, fondoVideo, video: video20, marcoVideo: marco },
   ];
 
+  const totalPaginas = 1 + personajes.length * 2 + 1;
   // 📏 Ajustar tamaño del libro
   useEffect(() => {
     const updateBookSize = () => {
