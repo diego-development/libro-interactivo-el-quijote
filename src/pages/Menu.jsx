@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 
 // 🖼️ Importar imágenes desde assets
-import fondoLibro from "../assets/fondo-libro.png";
+import fondoLibro from "../assets/fondo-menu.png";
 import frasesImg from "../assets/tarjetas/frases.png";
 import personajesImg from "../assets/tarjetas/personajes.png";
 import ejerciciosImg from "../assets/tarjetas/ejercicios.png";
