@@ -146,7 +146,7 @@ function LibroPersonajes() {
       }
     });
 
-    const totalPages = personajes.length * 2 + 2;
+     const totalPaginas = 1 + personajes.length * 2 + 1;
 
      if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => { });
