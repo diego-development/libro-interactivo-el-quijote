@@ -143,29 +143,30 @@ function LibroPersonajes() {
       } catch {}
     });
 
-     if (index === 0 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => { });
+    if (index === 0 && direction === "backward") {
+      sonidoContraportada.current.play().catch(() => {});
     } else if (index === 0 && direction === "forward") {
-      sonidoPortada.current.play().catch(() => { });
+      sonidoPortada.current.play().catch(() => {});
     } else if (index === 1) {
       if (direction === "forward") {
-        sonidoPortada.current.play().catch(() => { });
+        sonidoPortada.current.play().catch(() => {});
       } else {
-        sonidoPagina.current.play().catch(() => { });
+        sonidoPagina.current.play().catch(() => {});
       }
     } else if (index === totalPaginas - 3 && direction === "backward") {
-      sonidoContraportada.current.play().catch(() => { });
+      sonidoContraportada.current.play().catch(() => {});
     } else if (index === totalPaginas - 1 && direction === "forward") {
-      sonidoContraportada.current.play().catch(() => { });
+      sonidoContraportada.current.play().catch(() => {});
     } else {
-      sonidoPagina.current.play().catch(() => { });
+      sonidoPagina.current.play().catch(() => {});
     }
 
-    // 🧩 Reproduce los videos visibles
+    // 🧩 Control de videos mejorado
     const videoIndex = Math.floor((index - 1) / 2);
     videoRefs.current.forEach((vid, i) => {
       if (!vid) return;
       if (i === videoIndex || i === videoIndex + 1) {
+        vid.currentTime = 0; // 🔁 Reinicia el video cada vez que aparece
         vid.play().catch(() => {});
       } else {
         vid.pause();
@@ -228,7 +229,7 @@ function LibroPersonajes() {
                 muted
                 loop
                 playsInline
-                preload={i === 0 ? "auto" : "none"}  // 🟩 solo el primero se precarga
+                preload={i === 0 ? "auto" : "none"} // 🟩 Solo el primero se precarga
                 className="absolute object-contain"
                 style={{
                   top: "50%",
@@ -241,6 +242,7 @@ function LibroPersonajes() {
                   pointerEvents: "none",
                   zIndex: 2,
                 }}
+                onEnded={(e) => e.target.play()} // 🔁 En caso de que se detenga
               />
 
               <img
