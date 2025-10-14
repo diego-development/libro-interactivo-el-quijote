@@ -59,8 +59,6 @@ import video18 from "../../../assets/LibroPersonajes/videos/18.mp4";
 import video19 from "../../../assets/LibroPersonajes/videos/19.mp4";
 import video20 from "../../../assets/LibroPersonajes/videos/20.mp4";
 
-
-
 function LibroPersonajes() {
   const [bookSize, setBookSize] = useState({ width: 800, height: 1200 });
   const [lastPage, setLastPage] = useState(0);
@@ -68,42 +66,53 @@ function LibroPersonajes() {
   const flipBookRef = useRef(null);
 
   // 🔊 Sonidos
-  const sonidoPagina = useRef(new Audio(sonidoPaginaSrc));
-  const sonidoPortada = useRef(new Audio(sonidoPortadaSrc));
-  const sonidoContraportada = useRef(new Audio(sonidoContraportadaSrc));
+  const sonidoPagina = useRef();
+  const sonidoPortada = useRef();
+  const sonidoContraportada = useRef();
 
   useEffect(() => {
-    sonidoPagina.current.volume = 0.6;
+    // Lazy init de sonidos
+    sonidoPagina.current = new Audio(sonidoPaginaSrc);
+    sonidoPortada.current = new Audio(sonidoPortadaSrc);
+    sonidoContraportada.current = new Audio(sonidoContraportadaSrc);
+    sonidoPagina.current.volume = 0.5;
     sonidoPortada.current.volume = 1.0;
     sonidoContraportada.current.volume = 1.0;
+    return () => {
+      [sonidoPagina, sonidoPortada, sonidoContraportada].forEach((s) => {
+        if (s.current) {
+          s.current.pause();
+          s.current.src = "";
+        }
+      });
+    };
   }, []);
 
-  // 📖 Lista completa de personajes
+  // 📖 Lista de personajes
   const personajes = [
-    { fondo: fondo1, fondoVideo, video: video1, marcoVideo: marco },
-    { fondo: fondo2, fondoVideo, video: video2, marcoVideo: marco },
-    { fondo: fondo3, fondoVideo, video: video3, marcoVideo: marco },
-    { fondo: fondo4, fondoVideo, video: video4, marcoVideo: marco },
-    { fondo: fondo5, fondoVideo, video: video5, marcoVideo: marco },
-    { fondo: fondo6, fondoVideo, video: video6, marcoVideo: marco },
-    { fondo: fondo7, fondoVideo, video: video7, marcoVideo: marco },
-    { fondo: fondo8, fondoVideo, video: video8, marcoVideo: marco },
-    { fondo: fondo9, fondoVideo, video: video9, marcoVideo: marco },
-    { fondo: fondo10, fondoVideo, video: video10, marcoVideo: marco },
-    { fondo: fondo11, fondoVideo, video: video11, marcoVideo: marco },
-    { fondo: fondo12, fondoVideo, video: video12, marcoVideo: marco },
-    { fondo: fondo13, fondoVideo, video: video13, marcoVideo: marco },
-    { fondo: fondo14, fondoVideo, video: video14, marcoVideo: marco },
-    { fondo: fondo15, fondoVideo, video: video15, marcoVideo: marco },
-    { fondo: fondo16, fondoVideo, video: video16, marcoVideo: marco },
-    { fondo: fondo17, fondoVideo, video: video17, marcoVideo: marco },
-    { fondo: fondo18, fondoVideo, video: video18, marcoVideo: marco },
-    { fondo: fondo19, fondoVideo, video: video19, marcoVideo: marco },
-    { fondo: fondo20, fondoVideo, video: video20, marcoVideo: marco },
+    { fondo: fondo1, video: video1 },
+    { fondo: fondo2, video: video2 },
+    { fondo: fondo3, video: video3 },
+    { fondo: fondo4, video: video4 },
+    { fondo: fondo5, video: video5 },
+    { fondo: fondo6, video: video6 },
+    { fondo: fondo7, video: video7 },
+    { fondo: fondo8, video: video8 },
+    { fondo: fondo9, video: video9 },
+    { fondo: fondo10, video: video10 },
+    { fondo: fondo11, video: video11 },
+    { fondo: fondo12, video: video12 },
+    { fondo: fondo13, video: video13 },
+    { fondo: fondo14, video: video14 },
+    { fondo: fondo15, video: video15 },
+    { fondo: fondo16, video: video16 },
+    { fondo: fondo17, video: video17 },
+    { fondo: fondo18, video: video18 },
+    { fondo: fondo19, video: video19 },
+    { fondo: fondo20, video: video20 },
   ];
 
-  const totalPaginas = 1 + personajes.length * 2 + 1;
-  // 📏 Ajustar tamaño del libro
+  // 📏 Ajuste de tamaño eficiente
   useEffect(() => {
     const updateBookSize = () => {
       const availableWidth = window.innerWidth * 0.9;
@@ -118,29 +127,28 @@ function LibroPersonajes() {
       setBookSize({ width, height });
     };
     updateBookSize();
-    window.addEventListener("resize", updateBookSize);
-    return () => window.removeEventListener("resize", updateBookSize);
+    const resizeHandler = () => requestAnimationFrame(updateBookSize);
+    window.addEventListener("resize", resizeHandler);
+    return () => window.removeEventListener("resize", resizeHandler);
   }, []);
 
-  // 📖 Lógica de sonidos igual a LibroEjercicios
+  // 🔊 Sonidos de paso de página
   const handleFlip = (e) => {
     const index = e.data;
     const direction = index > lastPage ? "forward" : "backward";
     setLastPage(index);
     setCurrentPage(index);
 
-    // detener sonidos previos
     [sonidoPagina, sonidoPortada, sonidoContraportada].forEach((s) => {
-      try {
+      if (s.current) {
         s.current.pause();
         s.current.currentTime = 0;
-      } catch {}
+      }
     });
 
     const totalPages = personajes.length * 2 + 2;
-    const lastIndex = totalPages - 1;
 
-    if (index === 0 && direction === "backward") {
+     if (index === 0 && direction === "backward") {
       sonidoContraportada.current.play().catch(() => { });
     } else if (index === 0 && direction === "forward") {
       sonidoPortada.current.play().catch(() => { });
@@ -159,7 +167,12 @@ function LibroPersonajes() {
     }
   };
 
-  // 📖 Render
+  // 🎥 Solo reproducir video si visible
+  const isPageVisible = (pageIndex) => {
+    const diff = Math.abs(pageIndex - currentPage);
+    return diff <= 2; // solo las 2 páginas más cercanas activas
+  };
+
   return (
     <PageWrapper>
       <div
@@ -196,53 +209,58 @@ function LibroPersonajes() {
 
           {/* 🔹 Páginas de personajes */}
           {personajes.flatMap((p, i) => [
-            // 📘 Página izquierda (fondo)
-            <div
-              key={`fondo-${i}`}
-              className="page relative h-full w-full overflow-hidden"
-            >
+            // 📘 Fondo izquierdo
+            <div key={`fondo-${i}`} className="page relative h-full w-full overflow-hidden">
               <img
                 src={p.fondo}
-                alt={`Personaje ${i + 1} fondo`}
+                alt={`Personaje ${i + 1}`}
+                loading={i > 1 ? "lazy" : "eager"} // preload primeras páginas
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>,
 
-            // 📙 Página derecha con video
+            // 📙 Video derecho
             <div
               key={`video-${i}`}
               className="page relative h-full w-full overflow-hidden flex items-center justify-center"
             >
               <img
-                src={p.fondoVideo}
-                alt={`Fondo video ${i + 1}`}
+                src={fondoVideo}
+                alt="Fondo video"
                 className="absolute inset-0 h-full w-full object-cover z-0"
               />
-              <video
-                src={p.video}
-                muted
-                loop
-                playsInline
-                autoPlay
-                preload="metadata"
-                disablePictureInPicture
-                controls={false}
-                className="absolute object-contain"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "78%",
-                  height: "78%",
-                  maxWidth: "85%",
-                  maxHeight: "85%",
-                  pointerEvents: "none",
-                  zIndex: 2,
-                }}
-              />
+              {isPageVisible(i * 2 + 1) && (
+                <video
+                  src={p.video}
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
+                  preload="metadata"
+                  disablePictureInPicture
+                  controls={false}
+                  onError={(e) => {
+                    // reintento simple si el video no carga
+                    const el = e.target;
+                    setTimeout(() => el.load(), 1000);
+                  }}
+                  className="absolute object-contain"
+                  style={{
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "78%",
+                    height: "78%",
+                    maxWidth: "85%",
+                    maxHeight: "85%",
+                    pointerEvents: "none",
+                    zIndex: 2,
+                  }}
+                />
+              )}
               <img
-                src={p.marcoVideo}
-                alt={`Marco video ${i + 1}`}
+                src={marco}
+                alt="Marco"
                 className="absolute inset-0 h-full w-full object-contain z-10 pointer-events-none"
               />
             </div>,
