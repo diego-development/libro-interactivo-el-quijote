@@ -35,15 +35,35 @@ function LibroReseñas({ maxHojas = 2 }) {
   }, []);
 
   // 📥 Cargar reseñas aleatorias
-  useEffect(() => {
-    fetch("/reseñas.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const shuffled = [...data].sort(() => Math.random() - 0.5);
-        setReseñas(shuffled);
-      })
-      .catch((err) => console.error("Error cargando reseñas:", err));
-  }, []);
+useEffect(() => {
+  fetch("/reseñas.csv", { headers: { "Content-Type": "text/csv; charset=utf-8" } })
+    .then((res) => res.text())
+    .then((csvText) => {
+      const decoder = new TextDecoder("utf-8");
+      const decodedText = decoder.decode(new TextEncoder().encode(csvText));
+
+      const rows = decodedText
+        .split("\n")
+        .map((r) => r.trim())
+        .filter((r) => r.length > 0);
+
+      if (rows.length <= 1) return;
+
+      const headers = rows[0].split(";").map((h) => h.trim());
+      const data = rows.slice(1).map((row) => {
+        const values = row.split(";").map((v) => v.trim());
+        const obj = {};
+        headers.forEach((key, i) => (obj[key] = values[i] ?? ""));
+        return obj;
+      });
+
+      const shuffled = [...data].sort(() => Math.random() - 0.5);
+      setReseñas(shuffled);
+    })
+    .catch((err) => console.error("Error cargando reseñas CSV:", err));
+}, []);
+
+
 
   // 📏 Ajustar tamaño del libro según pantalla
   useEffect(() => {
